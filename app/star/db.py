@@ -51,6 +51,6 @@ class StarTwo:
                 }
             )
 
-        conn.close()
+        self.conn.close()
 
         return self.registros
