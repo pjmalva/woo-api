@@ -32,5 +32,6 @@ class WooMi:
             )
 
             data = control.makeRequest()
+            print(data)
             response = control.post(data)
             print(response)
