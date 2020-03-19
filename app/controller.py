@@ -4,13 +4,6 @@ from app.woo.product import Product
 
 class WooMi:
     def makeMigration(self):
-        woo = Woo(
-            url="https://impresso.miprojetos.com",
-            key="ck_795580178027ec011e443f1d4ce0e1a5f5a452cd",
-            secret="cs_fce9bae63d668102234d443781b68c01e27e602e",
-            version="wc/v3",
-        ).startAPI()
-
         products = StarTwo(
             host="10.5.25.14",
             user="star",
@@ -19,6 +12,13 @@ class WooMi:
         ).updateProducts()
 
         for product in products:
+            woo = Woo(
+                url="https://impresso.miprojetos.com",
+                key="ck_795580178027ec011e443f1d4ce0e1a5f5a452cd",
+                secret="cs_fce9bae63d668102234d443781b68c01e27e602e",
+                version="wc/v3",
+            ).startAPI()
+
             control = Product(
                 woo,
                 name=product['name'],
@@ -30,6 +30,7 @@ class WooMi:
                 date_on_sale_to=product['sale_finish'],
                 stock_quantity=product['stock'],
             )
+
             data = control.makeRequest()
             response = control.post(data)
             print(response)
