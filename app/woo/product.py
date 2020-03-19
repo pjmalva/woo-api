@@ -62,12 +62,12 @@ class Product:
     def setRegularPrice(self, value="0"):
         # Product regular price.
         if not value: value = "0"
-        self.regular_price = value
+        self.regular_price = str(value)
 
     def setSalePrice(self, value="0"):
         # Product sale price.
         if not value: value = "0"
-        self.sale_price = value
+        self.sale_price = str(value)
 
     def setDescription(self, value):
         self.description = value
@@ -105,7 +105,7 @@ class Product:
 
     def setStockQuantity(self, value=0):
         if not value: value = 0
-        self.stock_quantity = value
+        self.stock_quantity = int(value)
         self.setStockStatus(
             "outofstock" if self.stock_quantity == 0 else "instock"
         )
