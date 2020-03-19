@@ -77,7 +77,7 @@ class Product:
 
     def setDateOnSaleFrom(self, value):
         # Start date of sale price, in the site's timezone.
-        self.date_on_sale_from = value
+        self.date_on_sale_from = str(value)
 
     def setDateOnSaleFromGMT(self, value="-03:00"):
         # Start date of sale price, as GMT.
@@ -86,7 +86,7 @@ class Product:
 
     def setDateOnSaleTo(self, value):
         # End date of sale price, in the site's timezone.
-        self.date_on_sale_to = value
+        self.date_on_sale_to = str(value)
 
     def setDateOnSaleToGMT(self, value="-03:00"):
         # End date of sale price, as GMT.
