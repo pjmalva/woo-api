@@ -1,6 +1,6 @@
 class Category:
-    def __init__(self):
-        pass
+    def __init__(self, api):
+        self.api = api
 
     def setName(self, value):
         # Category name.MANDATORY

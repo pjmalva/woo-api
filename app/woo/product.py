@@ -1,6 +1,6 @@
 class Product:
     def __init__(self, api, **kwargs):
-        self.api
+        self.api = api
         self.setName(kwargs.get('name'))
         self.setSku(kwargs.get('sku'))
         self.setType(kwargs.get('type'))
