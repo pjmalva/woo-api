@@ -31,4 +31,5 @@ class WooMi:
                 stock_quantity=product['stock'],
             )
             data = control.makeRequest()
-            control.post(data)
+            response = control.post(data)
+            print(response)
