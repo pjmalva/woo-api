@@ -3,6 +3,14 @@ from app.woo.woo import Woo
 from app.woo.product import Product
 
 class WooMi:
+    def makeConnection(self):
+        woo = Woo(
+                url="https://impresso.miprojetos.com",
+                key="ck_795580178027ec011e443f1d4ce0e1a5f5a452cd",
+                secret="cs_fce9bae63d668102234d443781b68c01e27e602e",
+                version="wc/v3",
+            ).startAPI()
+
     def makeMigration(self):
         products = StarTwo(
             host="10.5.25.14",

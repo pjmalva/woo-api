@@ -33,7 +33,7 @@ class Product:
 
     def setSku(self, value):
         # Unique identifier.
-        self.sku = value
+        self.sku = str(value)
 
     def setType(self, value="simple"):
         # Product type. Options: simple, grouped, external and variable.
@@ -170,4 +170,4 @@ class Product:
 
     def post(self, data=None):
         if not data: data = self.data
-        self.response = self.api.post("products", data).json()
+        self.response = self.api.post("products", data)

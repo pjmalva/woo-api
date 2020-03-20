@@ -12,6 +12,11 @@ class Woo:
             url=self.url,
             consumer_key=self.key,
             consumer_secret=self.secret,
+            wp_api=True,
             version=self.version
         )
+
+        print('CHECKING CONNECTION WITH API')
+        respone = self.api.get("")
+        print(respone)
         return self.api

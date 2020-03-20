@@ -24,4 +24,4 @@ class Tag:
 
     def post(self, data=None):
         if not data: data = self.data
-        self.response = self.api.post("products/tags", data).json()
+        self.response = self.api.post("products/tags", data)
