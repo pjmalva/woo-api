@@ -13,10 +13,9 @@ class Woo:
             consumer_key=self.key,
             consumer_secret=self.secret,
             wp_api=True,
-            version=self.version
+            version=self.version,
+            timeout=30
         )
-
-        print('CHECKING CONNECTION WITH API')
-        respone = self.api.get("")
-        print(respone)
+        # print('CHECKING CONNECTION WITH API')
+        # respone = self.api.get("")
         return self.api

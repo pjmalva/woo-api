@@ -1,6 +1,10 @@
-class Product:
+from app.image.google_scrap import GoogleScrap
+from app.woo.api import BaseAPI
+
+class Product(BaseAPI):
     def __init__(self, api, **kwargs):
         self.api = api
+        self.data = {}
         self.setName(kwargs.get('name'))
         self.setSku(kwargs.get('sku'))
         self.setType(kwargs.get('type'))
@@ -18,22 +22,19 @@ class Product:
         self.setVirtual(kwargs.get('virtual'))
         self.setDownloadable(kwargs.get('downloadable'))
         self.setStockQuantity(kwargs.get('stock_quantity'))
-        self.setStockStatus(kwargs.get('stock_status'))
+        # self.setStockStatus(kwargs.get('stock_status'))
         self.setCategories(kwargs.get('categories'))
         self.setTags(kwargs.get('tags'))
         self.setImages(kwargs.get('images'))
         self.setAttributes(kwargs.get('attributes'))
         self.setDefaultAttributes(kwargs.get('default_attributes'))
 
-    def setField(self, field, value):
-        self[field] = value
-
     def setName(self, value):
         self.name = value
 
     def setSku(self, value):
         # Unique identifier.
-        self.sku = str(value)
+        self.sku = str(value).strip()
 
     def setType(self, value="simple"):
         # Product type. Options: simple, grouped, external and variable.
@@ -105,69 +106,135 @@ class Product:
 
     def setStockQuantity(self, value=0):
         if not value: value = 0
-        self.stock_quantity = int(value)
+        stock_str = str(value).replace('.', '').replace(',', '')
+        self.stock_quantity = int(stock_str)
         self.setStockStatus(
-            "outofstock" if self.stock_quantity == 0 else "instock"
+            "instock" if self.stock_quantity > 0 else "outofstock"
         )
 
     def setStockStatus(self, value="instock"):
         # Controls the stock status of the product.
         # Options: instock, outofstock, onbackorder.
         # Default is instock.
-        if not value: value = []
+        if not value: value = "instock"
         self.stock_status = value
 
     def setCategories(self, value=[]):
         # Array { 'id': category_id }
-        if not value: value = []
+        # if not value: return
         self.categories = value
 
     def setTags(self, value=[]):
         # Array { 'id': tag_id }
-        if not value: value = []
+        # if not value: return
         self.tags = value
 
     def setImages(self, value=[]):
         # Array { 'src': image_src, 'name': image_name, 'alt': image_alt }
-        if not value: value = []
+        # if not value: return
         self.images = value
 
     def setAttributes(self, value=[]):
-        if not value: value = []
+        # if not value: return
         self.attributes = value
 
     def setDefaultAttributes(self, value=[]):
-        if not value: value = []
+        # if not value: return
         self.default_attributes = value
 
     def makeRequest(self):
-        self.data = {
-            "name": self.name,
-            "sku": self.sku,
-            "type": self.type,
-            "status": self.status,
-            "featured": self.featured,
-            "catalog_visibility": self.catalog_visibility,
-            "regular_price": self.regular_price,
-            "sale_price": self.sale_price,
-            "description": self.description,
-            "short_description": self.short_description,
-            "date_on_sale_from": self.date_on_sale_from,
-            "date_on_sale_from_gmt": self.date_on_sale_from_gmt,
-            "date_on_sale_to": self.date_on_sale_to,
-            "date_on_sale_to_gmt": self.date_on_sale_to_gmt,
-            "virtual": self.virtual,
-            "downloadable": self.downloadable,
-            "stock_quantity": self.stock_quantity,
-            "stock_status": self.stock_status,
-            "categories": self.categories,
-            "tags": self.tags,
-            "images": self.images,
-            "attributes": self.attributes,
-            "default_attributes": self.default_attributes,
-        }
+        if self.name:
+            self.data["name"] = self.name
+
+        if self.sku:
+            self.data["sku"] = self.sku
+
+        if self.type:
+            self.data["type"] = self.type
+
+        if self.status:
+            self.data["status"] = self.status
+
+        if self.featured:
+            self.data["featured"] = self.featured
+
+        if self.catalog_visibility:
+            self.data["catalog_visibility"] = self.catalog_visibility
+
+        if self.regular_price:
+            self.data["regular_price"] = self.regular_price
+
+        if self.sale_price:
+            self.data["sale_price"] = self.sale_price
+
+        if self.description:
+            self.data["description"] = self.description
+
+        if self.short_description:
+            self.data["short_description"] = self.short_description
+
+        if self.date_on_sale_from:
+            self.data["date_on_sale_from"] = self.date_on_sale_from
+
+        if self.date_on_sale_from_gmt:
+            self.data["date_on_sale_from_gmt"] = self.date_on_sale_from_gmt
+
+        if self.date_on_sale_to:
+            self.data["date_on_sale_to"] = self.date_on_sale_to
+
+        if self.date_on_sale_to_gmt:
+            self.data["date_on_sale_to_gmt"] = self.date_on_sale_to_gmt
+
+        if self.virtual:
+            self.data["virtual"] = self.virtual
+
+        if self.downloadable:
+            self.data["downloadable"] = self.downloadable
+
+        if self.stock_quantity:
+            self.data["stock_quantity"] = self.stock_quantity
+
+        if self.stock_status:
+            self.data["stock_status"] = self.stock_status
+
+        if self.categories:
+            self.data["categories"] = self.categories
+
+        if self.tags:
+            self.data["tags"] = self.tags
+
+        if self.images:
+            self.data["images"] = self.images
+        else:
+            image = GoogleScrap(self.name).searchImage()
+            if image:
+                self.data["images"] = [
+                    {
+                        'src': image['link'],
+                        'name': image['title'],
+                        'alt': self.name
+                    }
+                ]
+
+        if self.attributes:
+            self.data["attributes"] = self.attributes
+
+        if self.default_attributes:
+            self.data["default_attributes"] = self.default_attributes
+
         return self.data
 
-    def post(self, data=None):
-        if not data: data = self.data
-        self.response = self.api.post("products", data)
+    def create(self, data=None):
+        return self.post("products", data)
+
+    def update(self, id, data=None):
+        return self.put("products/{0}".format(id), data)
+
+    def select(self, id):
+        return self.get("products/{0}".format(id))
+
+    def remove(self, id):
+        return self.delete("products/{0}".format(id))
+
+    def listAll(self):
+        return self.get("products")

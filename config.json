@@ -1,0 +1,20 @@
+{
+        "type": "csv",
+        "csv": {
+            "path": "C:/Users/Rafael/Downloads/teste-2.csv",
+            "newline": "\n",
+            "delimiter": ";"
+        },
+        "db": {
+            "host": "10.5.25.14",
+            "user": "star",
+            "passwd": "star",
+            "database": "STAR"
+        },
+        "woo": {
+            "url": "https://tita.miprojetos.com",
+            "key": "ck_29dfdbe96e04ea8205f32fa5fcf1672b5426698c",
+            "secret": "cs_5662975e194f3b3e21b76ade6123477d0e0ac92b",
+            "version": "wc/v3"
+        }
+    }
