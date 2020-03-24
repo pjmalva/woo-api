@@ -1,10 +1,14 @@
-from app.image.google_scrap import GoogleScrap
+# from app.image.google_scrap import GoogleScrap
 from app.woo.api import BaseAPI
+import json
 
 class Product(BaseAPI):
     def __init__(self, api, **kwargs):
         self.api = api
         self.data = {}
+        self.category = {}
+        self.minimun_stock = kwargs.get('minimun_stock', 30)
+
         self.setName(kwargs.get('name'))
         self.setSku(kwargs.get('sku'))
         self.setType(kwargs.get('type'))
@@ -16,9 +20,9 @@ class Product(BaseAPI):
         self.setDescription(kwargs.get('description'))
         self.setShortDescription(kwargs.get('short_description'))
         self.setDateOnSaleFrom(kwargs.get('date_on_sale_from'))
-        self.setDateOnSaleFromGMT(kwargs.get('date_on_sale_from_gmt'))
+        # self.setDateOnSaleFromGMT(kwargs.get('date_on_sale_from_gmt'))
         self.setDateOnSaleTo(kwargs.get('date_on_sale_to'))
-        self.setDateOnSaleToGMT(kwargs.get('date_on_sale_to_gmt'))
+        # self.setDateOnSaleToGMT(kwargs.get('date_on_sale_to_gmt'))
         self.setVirtual(kwargs.get('virtual'))
         self.setDownloadable(kwargs.get('downloadable'))
         self.setStockQuantity(kwargs.get('stock_quantity'))
@@ -28,13 +32,15 @@ class Product(BaseAPI):
         self.setImages(kwargs.get('images'))
         self.setAttributes(kwargs.get('attributes'))
         self.setDefaultAttributes(kwargs.get('default_attributes'))
+        self.setCategoryCode(kwargs.get('category_code'))
+        self.setCategoryName(kwargs.get('category_name'))
 
     def setName(self, value):
         self.name = value
 
     def setSku(self, value):
         # Unique identifier.
-        self.sku = str(value).strip()
+        self.sku = str(value)
 
     def setType(self, value="simple"):
         # Product type. Options: simple, grouped, external and variable.
@@ -78,7 +84,12 @@ class Product(BaseAPI):
 
     def setDateOnSaleFrom(self, value):
         # Start date of sale price, in the site's timezone.
-        self.date_on_sale_from = str(value)
+        if value == '1753-01-01 00:00:00.000':
+            self.date_on_sale_from = None
+            self.date_on_sale_from_gmt = None
+        else:
+            self.date_on_sale_from = str(value)
+            self.date_on_sale_from_gmt = "-03:00"
 
     def setDateOnSaleFromGMT(self, value="-03:00"):
         # Start date of sale price, as GMT.
@@ -87,7 +98,12 @@ class Product(BaseAPI):
 
     def setDateOnSaleTo(self, value):
         # End date of sale price, in the site's timezone.
-        self.date_on_sale_to = str(value)
+        if value == '1753-01-01 00:00:00.000':
+            self.date_on_sale_to = None
+            self.date_on_sale_to_gmt = None
+        else:
+            self.date_on_sale_to = str(value)
+            self.date_on_sale_to_gmt = "-03:00"
 
     def setDateOnSaleToGMT(self, value="-03:00"):
         # End date of sale price, as GMT.
@@ -95,21 +111,22 @@ class Product(BaseAPI):
         self.date_on_sale_to_gmt = value
 
     def setVirtual(self, value=False):
-        # If the product is virtual. Default is false.
+        # If the product is virtual.
+        # Default is false.
         if not value: value = False
         self.virtual = value
 
     def setDownloadable(self, value=False):
-        # If the product is downloadable. Default is false.
+        # If the product is downloadable.
+        # Default is false.
         if not value: value = False
         self.downloadable = value
 
     def setStockQuantity(self, value=0):
         if not value: value = 0
-        stock_str = str(value).replace('.', '').replace(',', '')
-        self.stock_quantity = int(stock_str)
+        self.stock_quantity = str(value)
         self.setStockStatus(
-            "instock" if self.stock_quantity > 0 else "outofstock"
+            "instock" if value >= self.minimun_stock else "outofstock"
         )
 
     def setStockStatus(self, value="instock"):
@@ -141,6 +158,19 @@ class Product(BaseAPI):
     def setDefaultAttributes(self, value=[]):
         # if not value: return
         self.default_attributes = value
+
+    def setCategoryCode(self, value):
+        self.category['slug'] = value
+
+    def setCategoryName(self, value):
+        self.category['name'] = value
+
+    def searchCategory(self):
+        with open('CATEGORY.json', 'r') as f:
+            categories = json.load(f)
+            for item in categories:
+                if item['name'] == self.category['name']:
+                    return { "id": item['id'] }
 
     def makeRequest(self):
         if self.name:
@@ -199,22 +229,25 @@ class Product(BaseAPI):
 
         if self.categories:
             self.data["categories"] = self.categories
+        else:
+            category = self.searchCategory()
+            if category: self.data["categories"] = [ category ]
 
         if self.tags:
             self.data["tags"] = self.tags
 
         if self.images:
             self.data["images"] = self.images
-        else:
-            image = GoogleScrap(self.name).searchImage()
-            if image:
-                self.data["images"] = [
-                    {
-                        'src': image['link'],
-                        'name': image['title'],
-                        'alt': self.name
-                    }
-                ]
+        # else:
+        #     image = GoogleScrap(self.name).searchImage()
+        #     if image:
+        #         self.data["images"] = [
+        #             {
+        #                 'src': image['link'],
+        #                 'name': image['title'],
+        #                 'alt': self.name
+        #             }
+        #         ]
 
         if self.attributes:
             self.data["attributes"] = self.attributes
@@ -224,8 +257,12 @@ class Product(BaseAPI):
 
         return self.data
 
+    def outOfStock(self):
+        return self.stock_status == "outofstock"
+
     def create(self, data=None):
-        return self.post("products", data)
+        if not self.outOfStock():
+            return self.post("products", data)
 
     def update(self, id, data=None):
         return self.put("products/{0}".format(id), data)

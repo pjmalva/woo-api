@@ -16,6 +16,4 @@ class Woo:
             version=self.version,
             timeout=30
         )
-        # print('CHECKING CONNECTION WITH API')
-        # respone = self.api.get("")
         return self.api

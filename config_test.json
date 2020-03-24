@@ -1,7 +1,7 @@
 {
         "type": "csv",
         "csv": {
-            "path": "C:/Users/Rafael/Downloads/teste-2.csv",
+            "path": "/home/pjmalva/Documentos/WOO",
             "newline": "\n",
             "delimiter": ";"
         },

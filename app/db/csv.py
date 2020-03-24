@@ -1,3 +1,4 @@
+import os
 import csv
 
 class CSV:
@@ -5,13 +6,21 @@ class CSV:
         self.path = path
         self.newline = newline
         self.delimiter = delimiter
-        self.products = []
+        self.registers = []
 
-    def openCsv(self):
-        with open(self.path, newline=self.newline, encoding='utf-8-sig') as file:
+    def openCsv(self, file):
+        content = []
+        path = os.path.join(self.path, file)
+        with open(path, newline=self.newline, encoding='utf-8-sig') as file:
             self.csv_content = csv.reader(file, delimiter=self.delimiter)
             for row in self.csv_content:
-                self.products.append(row)
+                content.append(row)
+        return content
 
-    def getProducts(self):
-        return self.products
+    def getProducts(self, minimunStock=30):
+        self.registers = self.openCsv('PRODUCTS.csv')
+        return self.registers
+
+    def getCategories(self):
+        self.registers = self.openCsv('CATEGORIES.csv')
+        return self.registers

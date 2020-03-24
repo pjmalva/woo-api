@@ -1,4 +1,4 @@
-from app.controller import WooMi
+from app.migration import WooMi
 import json
 
 print('INIT WOOMI')

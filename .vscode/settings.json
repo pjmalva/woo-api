@@ -1,3 +1,3 @@
 {
-    "python.pythonPath": "D:/projetos/woo-api/.env/Scripts/python.exe"
+    "python.pythonPath": ".env/bin/python"
 }
