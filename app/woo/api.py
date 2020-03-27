@@ -11,7 +11,8 @@ class BaseAPI:
         self.response = self.api.put(uri, data)
         return self.response if not json else self.response.json()
 
-    def get(self, uri, json=False):
+    def get(self, uri, data=None, json=False):
+        self.response = self.api.get(uri, **data)
         return self.response if not json else self.response.json()
 
     def delete(self, uri, json=False):

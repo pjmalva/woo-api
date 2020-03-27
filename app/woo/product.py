@@ -171,7 +171,7 @@ class Product(BaseAPI):
         self.category['name'] = value
 
     def searchCategory(self):
-        with open('CATEGORY.json', 'r') as f:
+        with open('DATA/CATEGORY.json', 'r') as f:
             categories = json.load(f)
             for item in categories:
                 if item['name'] == self.category['name']:
@@ -246,16 +246,6 @@ class Product(BaseAPI):
 
         if self.images:
             self.data["images"] = self.images
-        # else:
-        #     image = GoogleScrap(self.name).searchImage()
-        #     if image:
-        #         self.data["images"] = [
-        #             {
-        #                 'src': image['link'],
-        #                 'name': image['title'],
-        #                 'alt': self.name
-        #             }
-        #         ]
 
         if self.attributes:
             self.data["attributes"] = self.attributes
@@ -281,5 +271,11 @@ class Product(BaseAPI):
     def remove(self, id):
         return self.delete("products/{0}".format(id))
 
-    def listAll(self):
-        return self.get("products")
+    def listAll(self, page=1):
+        arguments = {
+            'params': {
+                'page': str(page),
+                'per_page': '20'
+            }
+        }
+        return self.get("products", arguments)

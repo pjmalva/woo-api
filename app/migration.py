@@ -80,10 +80,10 @@ class WooMi:
         api = self.setupAPI()
         productController = ProductController(None)
 
-        with open('PRODUCT.json', 'r') as fp:
+        with open('DATA/PRODUCT.json', 'r') as fp:
             products = json.load(fp)
 
-        # products = products[1440:]
+        products = products[2000:]
         for index,item in enumerate(products):
             try:
                 print(
@@ -96,17 +96,15 @@ class WooMi:
                     flush=True
                 )
 
-                product = Product(api)
-
-                send = {
-                    'images': productController.getImage(item['name'])
-                }
-
-                response = product.update(item['id'], send)
+                if len(item['images']) == 0:
+                    product = Product(api)
+                    send = {'images': productController.getImage(item['name'])}
+                    response = product.update(item['id'], send)
+                else :
+                    print(' - [ SKIP ] -', item['name'])
                 print(' - [ DONE ] -', item['name'], response)
             except Exception as e:
                 print(' - [ ERROR ] -', item['name'], e)
-        # print(products)
 
     def updateProducts(self):
         api = self.setupAPI()
@@ -114,8 +112,6 @@ class WooMi:
         productsStored = productController.processProductsStored()
         products = productController.loadProducts(minimunStock=1)
         newUpdates = []
-
-        # products = products[6159:]
 
         for index, product in enumerate(products):
             try:
@@ -151,6 +147,29 @@ class WooMi:
             except Exception as e:
                 print(' - [ ERROR ] -', product['name'], e)
 
-        with open('PRODUCT.json', 'w') as fp:
+        with open('DATA/PRODUCT.json', 'w') as fp:
             json.dump(newUpdates, fp)
+
+    def listProducts(self):
+        api = self.setupAPI()
+        products = Product(api)
+
+        page = 1
+        fullStore = []
+        result = products.listAll().json()
+        while len(result) > 0:
+            print("Page: ", page, end=", ", flush=True)
+            page += 1
+            fullStore += result
+            result = products.listAll(page).json()
+        print('')
+
+        with open('DATA/PRODUCT.json', 'w') as fp:
+            json.dump(fullStore, fp)
+
+    def updateCategories(self):
+        api = self.setupAPI()
+        productController = ProductController(self.type, self.db)
+        productsStored = productController.processProductsStored()
+
 

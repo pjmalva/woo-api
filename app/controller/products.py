@@ -101,7 +101,7 @@ class ProductController:
 
     def processProductsStored(self):
         productsStored = {}
-        with open('PRODUCT.json', 'r') as products:
+        with open('DATA/PRODUCT.json', 'r') as products:
             productsJson = json.load(products)
             for product in productsJson:
                 productsStored[product['sku']] = product['id']
