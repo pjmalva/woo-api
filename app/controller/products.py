@@ -1,5 +1,7 @@
 from app.db.csv import CSV
 from app.db.star import StarTwo
+from app.image.google_scrap import GoogleScrap
+import json
 
 class ProductController:
     def __init__(self, typeData, db=None):
@@ -7,7 +9,7 @@ class ProductController:
         self.type = typeData
         self.db = db
 
-    def loadProducts(self, minimunStock=30):
+    def loadProducts(self, minimunStock=1):
         if self.type == 'csv':
             products = self.loadProductsFromCsv(minimunStock)
         elif self.type == 'db':
@@ -16,12 +18,12 @@ class ProductController:
         self.products = self.formatProducts(products)
         return self.products
 
-    def loadProductsFromCsv(self, minimunStock=30):
+    def loadProductsFromCsv(self, minimunStock=1):
         csv_products = CSV(self.db.get('path'))
         products = csv_products.getProducts(minimunStock)
         return products
 
-    def loadProductsFromDB(self, minimunStock=30):
+    def loadProductsFromDB(self, minimunStock=1):
         products = StarTwo(
             host=self.db.host,
             user=self.db.user,
@@ -85,3 +87,24 @@ class ProductController:
             return float(product[7])
         elif self.type == 'db':
             return float(product['stock'])
+
+    def getImage(self, name):
+        image = GoogleScrap(name).searchImage()
+        if image:
+            return [
+                {
+                    'src': image['link'],
+                    'name': image['title'],
+                    'alt': name
+                }
+            ]
+
+    def processProductsStored(self):
+        productsStored = {}
+        with open('PRODUCT.json', 'r') as products:
+            productsJson = json.load(products)
+            for product in productsJson:
+                productsStored[product['sku']] = product['id']
+        return productsStored
+
+

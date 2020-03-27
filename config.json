@@ -1,7 +1,7 @@
 {
         "type": "csv",
         "csv": {
-            "path": "/home/pjmalva/Documentos/WOO",
+            "path": "D:\\projetos\\woo-api\\DOCS",
             "newline": "\n",
             "delimiter": ";"
         },
@@ -12,7 +12,7 @@
             "database": "STAR"
         },
         "woo": {
-            "url": "https://tita.miprojetos.com",
+            "url": "http://lojasupertita.com.br",
             "key": "ck_29dfdbe96e04ea8205f32fa5fcf1672b5426698c",
             "secret": "cs_5662975e194f3b3e21b76ade6123477d0e0ac92b",
             "version": "wc/v3"

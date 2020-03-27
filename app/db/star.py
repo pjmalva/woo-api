@@ -36,7 +36,7 @@ class StarTwo:
         return self.registros
 
 
-    def updateProducts(self, minimunStock=30):
+    def updateProducts(self, minimunStock=1):
         sql = """
             SELECT CD.MERCADORIA, CD.NOME_M, CD.UR, CS.PRECO,
                 CS.PROMOCAO, CS.INI_PROM, CS.VAL_PROM,

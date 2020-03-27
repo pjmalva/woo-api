@@ -7,7 +7,7 @@ class Product(BaseAPI):
         self.api = api
         self.data = {}
         self.category = {}
-        self.minimun_stock = kwargs.get('minimun_stock', 30)
+        self.minimun_stock = kwargs.get('minimun_stock', 1)
 
         self.setName(kwargs.get('name'))
         self.setSku(kwargs.get('sku'))
@@ -26,6 +26,7 @@ class Product(BaseAPI):
         self.setVirtual(kwargs.get('virtual'))
         self.setDownloadable(kwargs.get('downloadable'))
         self.setStockQuantity(kwargs.get('stock_quantity'))
+        self.setManageStock(kwargs.get('manage_stock'))
         # self.setStockStatus(kwargs.get('stock_status'))
         self.setCategories(kwargs.get('categories'))
         self.setTags(kwargs.get('tags'))
@@ -129,6 +130,10 @@ class Product(BaseAPI):
             "instock" if value >= self.minimun_stock else "outofstock"
         )
 
+    def setManageStock(self, value):
+        if not value: value = True
+        self.manage_stock = value
+
     def setStockStatus(self, value="instock"):
         # Controls the stock status of the product.
         # Options: instock, outofstock, onbackorder.
@@ -194,7 +199,7 @@ class Product(BaseAPI):
         if self.regular_price:
             self.data["regular_price"] = self.regular_price
 
-        if self.sale_price:
+        if self.sale_price and float(self.sale_price) > 0:
             self.data["sale_price"] = self.sale_price
 
         if self.description:
@@ -220,6 +225,9 @@ class Product(BaseAPI):
 
         if self.downloadable:
             self.data["downloadable"] = self.downloadable
+
+        if self.manage_stock:
+            self.data["manage_stock"] = self.manage_stock
 
         if self.stock_quantity:
             self.data["stock_quantity"] = self.stock_quantity

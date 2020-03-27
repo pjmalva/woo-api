@@ -17,7 +17,7 @@ class CSV:
                 content.append(row)
         return content
 
-    def getProducts(self, minimunStock=30):
+    def getProducts(self, minimunStock=1):
         self.registers = self.openCsv('PRODUCTS.csv')
         return self.registers
 

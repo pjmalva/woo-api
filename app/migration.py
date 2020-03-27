@@ -25,7 +25,7 @@ class WooMi:
 
     def loadData(self):
         categories = CategoryController(self.type, self.db).loadCategories()
-        products = ProductController(self.type, self.db).loadProducts(minimunStock=30)
+        products = ProductController(self.type, self.db).loadProducts(minimunStock=1)
 
         if categories:
             self.allData.append({
@@ -52,7 +52,7 @@ class WooMi:
             for index, info in enumerate(item['items']):
                 try:
                     print(
-                        '[ UPLOADING ]',
+                        '[ ADDING ]',
                         item.get('name'),
                         index,
                         'OF',
@@ -75,3 +75,82 @@ class WooMi:
                     print(' - [ ERROR ] -', info['name'], e)
             with open('{}.json'.format(item.get('name')), 'w') as fp:
                 json.dump(newUpdates, fp)
+
+    def updateImages(self):
+        api = self.setupAPI()
+        productController = ProductController(None)
+
+        with open('PRODUCT.json', 'r') as fp:
+            products = json.load(fp)
+
+        # products = products[1440:]
+        for index,item in enumerate(products):
+            try:
+                print(
+                    '[ UPDATING IMAGES ]',
+                    'PRODUCT',
+                    index,
+                    'OF',
+                    len(products),
+                    end="",
+                    flush=True
+                )
+
+                product = Product(api)
+
+                send = {
+                    'images': productController.getImage(item['name'])
+                }
+
+                response = product.update(item['id'], send)
+                print(' - [ DONE ] -', item['name'], response)
+            except Exception as e:
+                print(' - [ ERROR ] -', item['name'], e)
+        # print(products)
+
+    def updateProducts(self):
+        api = self.setupAPI()
+        productController = ProductController(self.type, self.db)
+        productsStored = productController.processProductsStored()
+        products = productController.loadProducts(minimunStock=1)
+        newUpdates = []
+
+        # products = products[6159:]
+
+        for index, product in enumerate(products):
+            try:
+                productStored = productsStored.get(product['sku'])
+
+                print(
+                    '[ UPDATING ]' if productStored else '[ ADDING ]',
+                    'PRODUCTS',
+                    index,
+                    'OF',
+                    len(products),
+                    end="",
+                    flush=True
+                )
+
+                productOBJ = Product(
+                    api,
+                    **product
+                )
+
+                send = productOBJ.makeRequest()
+
+                if not productStored:
+                    response = productOBJ.create(send)
+                else:
+                    response = productOBJ.update(productStored, send)
+
+                if response:
+                    newUpdates.append(response.json())
+                    print(' - [ DONE ] -', product['name'], response)
+                else:
+                    print(' - [ SKIP ] -', product['name'])
+            except Exception as e:
+                print(' - [ ERROR ] -', product['name'], e)
+
+        with open('PRODUCT.json', 'w') as fp:
+            json.dump(newUpdates, fp)
+
