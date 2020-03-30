@@ -14,6 +14,6 @@ class Woo:
             consumer_secret=self.secret,
             wp_api=True,
             version=self.version,
-            timeout=30
+            timeout=15
         )
         return self.api

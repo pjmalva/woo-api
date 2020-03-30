@@ -6,6 +6,7 @@ from app.woo.category import Category
 # from app.image.google_scrap import GoogleScrap
 from app.controller.categories import CategoryController
 from app.controller.products import ProductController
+import time
 
 class WooMi:
     def __init__(self, woo, db, sourceType):
@@ -83,8 +84,9 @@ class WooMi:
         with open('DATA/PRODUCT.json', 'r') as fp:
             products = json.load(fp)
 
-        products = products[2000:]
+        products = products[4488:]
         for index,item in enumerate(products):
+            # time.sleep(1)
             try:
                 print(
                     '[ UPDATING IMAGES ]',
@@ -100,9 +102,9 @@ class WooMi:
                     product = Product(api)
                     send = {'images': productController.getImage(item['name'])}
                     response = product.update(item['id'], send)
+                    print(' - [ DONE ] -', item['name'], response)
                 else :
                     print(' - [ SKIP ] -', item['name'])
-                print(' - [ DONE ] -', item['name'], response)
             except Exception as e:
                 print(' - [ ERROR ] -', item['name'], e)
 
@@ -158,6 +160,7 @@ class WooMi:
         fullStore = []
         result = products.listAll().json()
         while len(result) > 0:
+            print(result)
             print("Page: ", page, end=", ", flush=True)
             page += 1
             fullStore += result

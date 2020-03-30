@@ -79,6 +79,6 @@ if args.pictures:
     print('MIGRATE IMAGES')
     migrate.updateImages()
 
-if args.category:
-    print('UPDATE PRODUCTS CATEGORES')
-    migrate.updateCategories()
+# if args.category:
+#    print('UPDATE PRODUCTS CATEGORES')
+#    migrate.updateCategories()

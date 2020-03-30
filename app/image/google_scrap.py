@@ -7,7 +7,7 @@ import json
 class GoogleScrap:
     def __init__(self, search):
         self.search = search
-        self.apiKey = 'AIzaSyAKa8U-FF-6T-rVfXilwU1b-_AtLY3zqkI'
+        self.apiKey = 'AIzaSyChhj_83Kjz4LC3bMrH7MlrZzy5IJTS-sc'
         self.cxKey = '005747464859247272350:toxcemvxn3s'
         self.number = 1
         self.searchType = 'image'
@@ -20,7 +20,7 @@ class GoogleScrap:
                 'cx': self.cxKey,
                 'num': self.number,
                 'searchType': self.searchType,
-                # 'imgSize': 'medium',
+                'imgSize': 'medium',
                 'q': self.search
             }
 
@@ -51,3 +51,7 @@ class GoogleScrap:
 # AIzaSyDpuzwud4eXOzfdaeL4pYww5Dpb4g6PTpg
 # AIzaSyAKa8U-FF-6T-rVfXilwU1b-_AtLY3zqkI
 # AIzaSyChhj_83Kjz4LC3bMrH7MlrZzy5IJTS-sc
+# AIzaSyCrmYV_TsQhZngV2gV6nNu7nwDZHXIUeX4
+# AIzaSyDp-6XwgybXU5CgKT_S1sQs5c_PZLFuZM0
+# AIzaSyAI6H3tXkuyiRj8uMsI_hkmujqkIaw1v6Q
+# AIzaSyDucqI_9K5kQohH6ExIs5K_7oeycI5Er1I
