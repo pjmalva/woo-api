@@ -46,13 +46,13 @@ class CategoryController:
 
     def getCategoryFieldsFromCsv(self, category):
         return {
-            "code": category[0].strip().replace('.', '-'),
+            "code": category[0].strip(),
             "name": category[1].strip()
         }
 
     def getCategoryFieldsFromDB(self, category):
         return {
-            "code": category['stock'].strip().replace('.', '-'),
+            "code": category['stock'].strip(),
             "name": category['name'].strip()
         }
 

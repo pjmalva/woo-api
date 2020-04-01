@@ -1,6 +1,9 @@
 # from app.image.google_scrap import GoogleScrap
-from app.woo.api import BaseAPI
 import json
+
+from app.woo.api import BaseAPI
+from app.controller.granel import Granel
+from datetime import datetime, timedelta
 
 class Product(BaseAPI):
     def __init__(self, api, **kwargs):
@@ -85,7 +88,7 @@ class Product(BaseAPI):
 
     def setDateOnSaleFrom(self, value):
         # Start date of sale price, in the site's timezone.
-        if value == '1753-01-01 00:00:00.000':
+        if value in ['1753-01-01 00:00:00.000', None]:
             self.date_on_sale_from = None
             self.date_on_sale_from_gmt = None
         else:
@@ -99,11 +102,13 @@ class Product(BaseAPI):
 
     def setDateOnSaleTo(self, value):
         # End date of sale price, in the site's timezone.
-        if value == '1753-01-01 00:00:00.000':
+        if value in ['1753-01-01 00:00:00.000', None]:
             self.date_on_sale_to = None
             self.date_on_sale_to_gmt = None
         else:
-            self.date_on_sale_to = str(value)
+            base_date = datetime.strptime(str(value), "%Y-%m-%d %H:%M:%S.%f")
+            end_date = base_date + timedelta(days=1)
+            self.date_on_sale_to = end_date.strftime('%Y-%m-%d')
             self.date_on_sale_to_gmt = "-03:00"
 
     def setDateOnSaleToGMT(self, value="-03:00"):
@@ -165,7 +170,7 @@ class Product(BaseAPI):
         self.default_attributes = value
 
     def setCategoryCode(self, value):
-        self.category['slug'] = value
+        self.category['code'] = value
 
     def setCategoryName(self, value):
         self.category['name'] = value
@@ -261,6 +266,9 @@ class Product(BaseAPI):
     def create(self, data=None):
         if not self.outOfStock():
             return self.post("products", data)
+
+    def createUpdate(self, data=None):
+        return self.post("products", data)
 
     def update(self, id, data=None):
         return self.put("products/{0}".format(id), data)

@@ -1,20 +1,35 @@
 {
-        "type": "csv",
-        "csv": {
-            "path": "D:\\projetos\\woo-api\\DOCS",
-            "newline": "\n",
-            "delimiter": ";"
+    "type": "csv",
+    "csv": {
+        "path": "/srv/projects/woomi/DOCS/",
+        "newline": "\n",
+        "delimiter": ";"
+    },
+    "db": {
+        "host": "10.5.25.14",
+        "user": "star",
+        "passwd": "star",
+        "database": "STAR"
+    },
+    "woo": {
+        "url": "http://lojasupertita.com.br",
+        "key": "ck_dd5e65b1b97e2d40c3e3082ddddc63ee9f5187e4",
+        "secret": "cs_687de955365eb7de0ae392dc331140c104b5886a",
+        "version": "wc/v3"
+    },
+    "granel": {
+        "04.01.01": {
+            "factor": 500
         },
-        "db": {
-            "host": "10.5.25.14",
-            "user": "star",
-            "passwd": "star",
-            "database": "STAR"
+        "04.01.02": {
+            "only": ["119", "2454", "198", "95", "59"],
+            "factor": 500
         },
-        "woo": {
-            "url": "http://lojasupertita.com.br",
-            "key": "ck_29dfdbe96e04ea8205f32fa5fcf1672b5426698c",
-            "secret": "cs_5662975e194f3b3e21b76ade6123477d0e0ac92b",
-            "version": "wc/v3"
+        "04.05.04": {
+            "factor": 100
+        },
+        "02.01.07": {
+            "factor": 100
         }
     }
+}

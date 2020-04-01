@@ -58,7 +58,7 @@ class ProductController:
             "date_on_sale_from": product[5].strip(),
             "date_on_sale_to": product[6].strip(),
             "stock_quantity": int(float(stock[:-3] + '.' + stock[-3:])),
-            "category_code": product[8].strip().replace('.', '-'),
+            "category_code": product[8].strip(),
             "category_name": product[9].strip(),
         }
 
@@ -72,7 +72,7 @@ class ProductController:
             "date_on_sale_from": product['sale_start'].strip(),
             "date_on_sale_to": product['sale_finish'].strip(),
             "stock_quantity": int(product['stock']),
-            "category_code": product['category_code'].strip().replace('.', '-'),
+            "category_code": product['category_code'].strip(),
             "category_name": product['category_name'].strip(),
         }
 

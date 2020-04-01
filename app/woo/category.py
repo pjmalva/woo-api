@@ -80,5 +80,11 @@ class Category(BaseAPI):
     def remove(self, id):
         return self.delete("products/categories/{0}".format(id))
 
-    def listAll(self):
-        return self.get("products/categories")
+    def listAll(self, page=1):
+        arguments = {
+            'params': {
+                'page': str(page),
+                'per_page': '20'
+            }
+        }
+        return self.get("products/categories", arguments)

@@ -115,6 +115,7 @@ class WooMi:
         products = productController.loadProducts(minimunStock=1)
         newUpdates = []
 
+        # products = products[1902:]
         for index, product in enumerate(products):
             try:
                 productStored = productsStored.get(product['sku'])
@@ -135,22 +136,25 @@ class WooMi:
                 )
 
                 send = productOBJ.makeRequest()
-
                 if not productStored:
                     response = productOBJ.create(send)
                 else:
                     response = productOBJ.update(productStored, send)
 
-                if response:
-                    newUpdates.append(response.json())
-                    print(' - [ DONE ] -', product['name'], response)
+                if response is not None:
+                    # print(response)
+                    # newUpdates.append(response.json())
+                    if (response.status_code < 300):
+                        print(' - [ DONE ] -', product['name'])
+                    else:
+                        print(' - [ CHEKIT ] -', product['name'], response.content)
                 else:
                     print(' - [ SKIP ] -', product['name'])
             except Exception as e:
                 print(' - [ ERROR ] -', product['name'], e)
 
-        with open('DATA/PRODUCT.json', 'w') as fp:
-            json.dump(newUpdates, fp)
+        # with open('DATA/PRODUCT.json', 'w') as fp:
+        #     json.dump(newUpdates, fp)
 
     def listProducts(self):
         api = self.setupAPI()
@@ -160,14 +164,30 @@ class WooMi:
         fullStore = []
         result = products.listAll().json()
         while len(result) > 0:
-            print(result)
-            print("Page: ", page, end=", ", flush=True)
+            print("\rLoad All Product pages, it can took some time! Current Page is", page, end="", flush=True)
             page += 1
             fullStore += result
             result = products.listAll(page).json()
         print('')
 
         with open('DATA/PRODUCT.json', 'w') as fp:
+            json.dump(fullStore, fp)
+
+    def listCategories(self):
+        api = self.setupAPI()
+        categories = Category(api)
+
+        page = 1
+        fullStore = []
+        result = categories.listAll().json()
+        while len(result) > 0:
+            print("\rLoad All Categories pages, it can took some time! Current Page is", page, end="", flush=True)
+            page += 1
+            fullStore += result
+            result = categories.listAll(page).json()
+        print('')
+
+        with open('DATA/CATEGORY.json', 'w') as fp:
             json.dump(fullStore, fp)
 
     def updateCategories(self):
