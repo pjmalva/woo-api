@@ -2,7 +2,7 @@ import json
 
 ENV_HOMO=0
 ENV_PROD=1
-ENVIROMENT=ENV_HOMO
+ENVIROMENT=ENV_PROD
 
 PATH_ENVS_FILE = {
     ENV_HOMO: 'config_test.json',
