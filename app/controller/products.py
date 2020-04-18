@@ -64,16 +64,16 @@ class ProductController:
 
     def getProductFieldsDB(self, product):
         return {
-            "name": product['name'].strip(),
-            "sku": product['reference'].strip(),
-            "regular_price": product['price'].strip(),
-            "sale_price": product['price_sale'].strip(),
-            "description": product['name'].strip(),
-            "date_on_sale_from": product['sale_start'].strip(),
-            "date_on_sale_to": product['sale_finish'].strip(),
+            "name": product['name'],
+            "sku": product['reference'],
+            "regular_price": product['price'],
+            "sale_price": product['price_sale'],
+            "description": product['name'],
+            "date_on_sale_from": product['sale_start'],
+            "date_on_sale_to": product['sale_finish'],
             "stock_quantity": int(product['stock']),
-            "category_code": product['category_code'].strip(),
-            "category_name": product['category_name'].strip(),
+            "category_code": product['category_code'],
+            "category_name": product['category_name'],
         }
 
     def getReference(self, product):

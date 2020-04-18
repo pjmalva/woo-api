@@ -75,5 +75,4 @@ class StarTwo:
                     'category_name': registro[9],
                 }
             )
-        print(self.registros)
         return self.registros
