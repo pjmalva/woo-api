@@ -1,7 +1,7 @@
 {
     "type": "csv",
     "csv": {
-        "path": "/srv/projects/woomi/DOCS/",
+        "path": "D:/projetos/woo-api/DOCS/",
         "newline": "\n",
         "delimiter": ";"
     },
@@ -18,29 +18,11 @@
         "version": "wc/v3"
     },
     "granel": {
-        "02.01.07": {
-            "factor": 100
+        "04.01.01": {
+            "factor": 500
         },
-        "04.05.04": {
-            "factor": 100
-        },
-        "04.05.05": {
-            "factor": 100
-        },
-        "04.05.01": {
-            "factor": 100
-        },
-        "02.02.01": {
-            "factor": 100
-        },
-        "04.05.02": {
-            "factor": 100
-        },
-        "04.04.01": {
-            "factor": 100
-        },
-        "04.06.08": {
-            "factor": 100
+        "04.01.02": {
+            "factor": 500
         }
     }
 }

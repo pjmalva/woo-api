@@ -258,7 +258,7 @@ class Product(BaseAPI):
         if self.default_attributes:
             self.data["default_attributes"] = self.default_attributes
 
-        return self.data
+        return Granel().checkAndConvert(self.category['code'], self.data)
 
     def outOfStock(self):
         return self.stock_status == "outofstock"

@@ -25,10 +25,10 @@ class ProductController:
 
     def loadProductsFromDB(self, minimunStock=1):
         products = StarTwo(
-            host=self.db.host,
-            user=self.db.user,
-            passwd=self.db.passwd,
-            database=self.db.database
+            host=self.db.get('host'),
+            user=self.db.get('user'),
+            passwd=self.db.get('passwd'),
+            database=self.db.get('database')
         ).updateProducts(minimunStock)
         return products
 
