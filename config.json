@@ -1,5 +1,5 @@
 {
-    "type": "csv",
+    "type": "db",
     "csv": {
         "path": "D:/projetos/woo-api/DOCS/",
         "newline": "\n",

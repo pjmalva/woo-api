@@ -65,7 +65,7 @@ class ProductController:
     def getProductFieldsDB(self, product):
         return {
             "name": product['name'],
-            "sku": product['reference'],
+            "sku": str(product['reference']),
             "regular_price": float(product['price']),
             "sale_price": float(product['price_sale']),
             "description": product['name'],

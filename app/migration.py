@@ -112,14 +112,11 @@ class WooMi:
         api = self.setupAPI()
         productController = ProductController(self.type, self.db)
         productsStored = productController.processProductsStored()
-        products = productController.loadProducts(minimunStock=1)
-        newUpdates = []
+        products = productController.loadProducts(minimunStock=0)
 
-        # products = products[1902:]
         for index, product in enumerate(products):
             try:
                 productStored = productsStored.get(product['sku'])
-
                 print(
                     '[ UPDATING ]' if productStored else '[ ADDING ]',
                     'PRODUCTS',
@@ -142,8 +139,6 @@ class WooMi:
                     response = productOBJ.update(productStored, send)
 
                 if response is not None:
-                    # print(response)
-                    # newUpdates.append(response.json())
                     if (response.status_code < 300):
                         print(' - [ DONE ] -', product['name'])
                     else:
