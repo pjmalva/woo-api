@@ -10,7 +10,7 @@ class Product(BaseAPI):
         self.api = api
         self.data = {}
         self.category = {}
-        self.minimun_stock = kwargs.get('minimun_stock', 1)
+        self.minimun_stock = kwargs.get('minimun_stock', 5)
 
         self.setName(kwargs.get('name'))
         self.setSku(kwargs.get('sku'))
@@ -134,6 +134,10 @@ class Product(BaseAPI):
         self.setStockStatus(
             "instock" if value >= self.minimun_stock else "outofstock"
         )
+
+    def setMinimunStock(self, value=5):
+        if not value: value = 0
+        self.stock_quantity = str(value)
 
     def setManageStock(self, value):
         if not value: value = True
