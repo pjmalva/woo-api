@@ -1,5 +1,5 @@
 {
-    "type": "db",
+    "type": "csv",
     "csv": {
         "path": "D:/projetos/woo-api/DOCS/",
         "newline": "\n",
@@ -12,17 +12,171 @@
         "database": "STAR"
     },
     "woo": {
-        "url": "http://lojasupertita.com.br",
-        "key": "ck_dd5e65b1b97e2d40c3e3082ddddc63ee9f5187e4",
-        "secret": "cs_687de955365eb7de0ae392dc331140c104b5886a",
+        "url": "https://tita.miprojetos.com",
+        "key": "ck_29dfdbe96e04ea8205f32fa5fcf1672b5426698c",
+        "secret": "cs_5662975e194f3b3e21b76ade6123477d0e0ac92b",
         "version": "wc/v3"
     },
     "granel": {
         "04.01.01": {
+            "type": "est",
             "factor": 500
         },
         "04.01.02": {
+            "type": "est",
             "factor": 500
+        },
+        "42": {
+            "type": "ref",
+            "average": 350
+        },
+        "3": {
+            "type": "ref",
+            "average": 4500
+        },
+        "4": {
+            "type": "ref",
+            "average": 200
+        },
+        "241": {
+            "type": "ref",
+            "average": 400
+        },
+        "30": {
+            "type": "ref",
+            "average": 6000
+        },
+        "5": {
+            "type": "ref",
+            "average": 30
+        },
+        "24": {
+            "type": "ref",
+            "average": 140
+        },
+        "33": {
+            "type": "ref",
+            "average": 120
+        },
+        "27": {
+            "type": "ref",
+            "average": 120
+        },
+        "28": {
+            "type": "ref",
+            "average": 100
+        },
+        "586": {
+            "type": "ref",
+            "average": 600
+        },
+        "7": {
+            "type": "ref",
+            "average": 250
+        },
+        "2": {
+            "type": "ref",
+            "average": 250
+        },
+        "254": {
+            "type": "ref",
+            "average": 140
+        },
+        "29": {
+            "type": "ref",
+            "average": 120
+        },
+        "9": {
+            "type": "ref",
+            "average": 150
+        },
+        "11": {
+            "type": "ref",
+            "average": 120
+        },
+        "12": {
+            "type": "ref",
+            "average": 320
+        },
+        "220": {
+            "type": "ref",
+            "average": 100
+        },
+        "31": {
+            "type": "ref",
+            "average": 100
+        },
+        "14": {
+            "type": "ref",
+            "average": 300
+        },
+        "32": {
+            "type": "ref",
+            "average": 150
+        },
+        "121": {
+            "type": "ref",
+            "average": 170
+        },
+        "37": {
+            "type": "ref",
+            "average": 195
+        },
+        "38": {
+            "type": "ref",
+            "average": 195
+        },
+        "737": {
+            "type": "ref",
+            "average": 450
+        },
+        "36": {
+            "type": "ref",
+            "average": 450
+        },
+        "581": {
+            "type": "ref",
+            "average": 200
+        },
+        "123": {
+            "type": "ref",
+            "average": 100
+        },
+        "34": {
+            "type": "ref",
+            "average": 10000
+        },
+        "35": {
+            "type": "ref",
+            "average": 1500
+        },
+        "238": {
+            "type": "ref",
+            "average": 130
+        },
+        "16": {
+            "type": "ref",
+            "average": 150
+        },
+        "40": {
+            "type": "ref",
+            "average": 135
+        },
+        "17": {
+            "type": "ref",
+            "average": 300
+        },
+        "22": {
+            "type": "ref",
+            "average": 1200
+        },
+        "888": {
+            "type": "ref",
+            "average": 1200
+        },
+        "19": {
+            "type": "ref",
+            "average": 170
         }
     }
 }

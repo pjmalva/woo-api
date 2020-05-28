@@ -159,7 +159,7 @@ class WooMi:
         fullStore = []
         result = products.listAll().json()
         while len(result) > 0:
-            print("\rLoad All Product pages, it can took some time! Current Page is", page, end="", flush=True)
+            print("\rLoad All Product pages, it can take some time! Current Page is", page, end="", flush=True)
             page += 1
             fullStore += result
             result = products.listAll(page).json()
@@ -176,7 +176,7 @@ class WooMi:
         fullStore = []
         result = categories.listAll().json()
         while len(result) > 0:
-            print("\rLoad All Categories pages, it can took some time! Current Page is", page, end="", flush=True)
+            print("\rLoad All Categories pages, it can take some time! Current Page is", page, end="", flush=True)
             page += 1
             fullStore += result
             result = categories.listAll(page).json()
