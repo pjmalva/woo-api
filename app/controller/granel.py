@@ -14,6 +14,8 @@ class Granel:
         if rule and rule['type'] == 'est' and self.isIncluded(product['sku'], rule.get('only')):
             return self.makeAjustmentsCategory(product, rule)
 
+        return product
+
     def makeAjustmentsProduct(self, product, rule):
         if not 'KG' in product['name']: return product
         product['name'] = product['name'].replace('KG', 'UN')
