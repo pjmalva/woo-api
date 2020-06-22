@@ -93,7 +93,7 @@ class Product(BaseAPI):
             self.date_on_sale_from_gmt = None
         else:
             self.date_on_sale_from = str(value)
-            self.date_on_sale_from_gmt = "-03:00"
+            self.date_on_sale_from_gmt = str(value)
 
     def setDateOnSaleFromGMT(self, value="-03:00"):
         # Start date of sale price, as GMT.
@@ -109,7 +109,7 @@ class Product(BaseAPI):
             base_date = datetime.strptime(str(value), "%Y-%m-%d %H:%M:%S.%f")
             end_date = base_date + timedelta(days=1)
             self.date_on_sale_to = end_date.strftime('%Y-%m-%d')
-            self.date_on_sale_to_gmt = "-03:00"
+            self.date_on_sale_to_gmt = end_date.strftime('%Y-%m-%d')
 
     def setDateOnSaleToGMT(self, value="-03:00"):
         # End date of sale price, as GMT.

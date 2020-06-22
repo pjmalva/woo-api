@@ -65,6 +65,7 @@ if args.pictures:
     print('MIGRATE IMAGES')
     migrate.updateImages()
 
+migrate.sendEmail(config.get('email'))
 # if args.category:
 #    print('UPDATE PRODUCTS CATEGORES')
 #    migrate.updateCategories()

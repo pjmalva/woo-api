@@ -6,6 +6,7 @@ from app.woo.category import Category
 # from app.image.google_scrap import GoogleScrap
 from app.controller.categories import CategoryController
 from app.controller.products import ProductController
+from app.email.email import Email
 import time
 
 class WooMi:
@@ -14,6 +15,7 @@ class WooMi:
         self.db = db
         self.type = sourceType
         self.allData = []
+        self.email = ""
 
     def setupAPI(self):
         self.api = Woo(
@@ -35,12 +37,16 @@ class WooMi:
                 'class': Category
             })
 
+        self.email += "Load data: Categories: OK\n"
+
         if products:
             self.allData.append({
                 'name': 'PRODUCT',
                 'items': products,
                 'class': Product
             })
+
+        self.email += "Load data: Products: OK\n"
 
         return self.allData
 
@@ -76,6 +82,7 @@ class WooMi:
                     print(' - [ ERROR ] -', info['name'], e)
             with open('{}.json'.format(item.get('name')), 'w') as fp:
                 json.dump(newUpdates, fp)
+        self.email += "Migrate data: Products: OK\n"
 
     def updateImages(self):
         api = self.setupAPI()
@@ -107,6 +114,7 @@ class WooMi:
                     print(' - [ SKIP ] -', item['name'])
             except Exception as e:
                 print(' - [ ERROR ] -', item['name'], e)
+        self.email += "Update Images: Images: OK\n"
 
     def updateProducts(self):
         api = self.setupAPI()
@@ -133,6 +141,7 @@ class WooMi:
                 )
 
                 send = productOBJ.makeRequest()
+                print(send)
                 if not productStored:
                     response = productOBJ.create(send)
                 else:
@@ -147,6 +156,7 @@ class WooMi:
                     print(' - [ SKIP ] -', product['name'])
             except Exception as e:
                 print(' - [ ERROR ] -', product['name'], e)
+        self.email += "Update data: Products: OK\n"
 
         # with open('DATA/PRODUCT.json', 'w') as fp:
         #     json.dump(newUpdates, fp)
@@ -167,6 +177,7 @@ class WooMi:
 
         with open('DATA/PRODUCT.json', 'w') as fp:
             json.dump(fullStore, fp)
+        self.email += "List data: Products: OK\n"
 
     def listCategories(self):
         api = self.setupAPI()
@@ -184,10 +195,49 @@ class WooMi:
 
         with open('DATA/CATEGORY.json', 'w') as fp:
             json.dump(fullStore, fp)
+        self.email += "List data: Categories: OK\n"
 
     def updateCategories(self):
         api = self.setupAPI()
         productController = ProductController(self.type, self.db)
         productsStored = productController.processProductsStored()
+        self.email += "Update data: Categories: OK\n"
 
+    def sendEmail(self, email):
+        mail = Email(
+            email.get('host'),
+            email.get('port'),
+            email.get('user'),
+            email.get('password')
+        )
+
+        mail.setSender([
+            "Mitrix",
+            "pj@mitrix.com.br"
+        ])
+
+        mail.setReceiver([
+            [
+                "Mitrix",
+                "suporte@mitrix.com.br"
+            ],
+            [
+                "Pj Malva",
+                "pj@mitrix.com.br"
+            ],
+            [
+                "Deividi Alves",
+                "deividi@deividialves.com"
+            ]
+        ])
+
+        mail.setSubject("Atualização da Woo API: " + self.woo.get('url') + " - Data:" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        mail.setMessage(self.email)
+
+        # mail.setAttachments('DATA/PRODUCT.json')
+        # mail.setAttachments('DATA/CATEGORY.json')
+
+        mail.send()
+
+        print("Email sended")
 

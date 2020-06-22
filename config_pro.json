@@ -17,6 +17,30 @@
         "secret": "cs_687de955365eb7de0ae392dc331140c104b5886a",
         "version": "wc/v3"
     },
+    "email": {
+        "sender": [
+            "Mitrix",
+            "no-reply@mitrix.com.br"
+        ],
+        "receiver": [
+            {
+                "nome": "Mitrix",
+                "email": "suporte@mitrix.com.br"
+            },
+            {
+                "nome": "Pj Malva",
+                "email": "pj@mitrix.com.br"
+            },
+            {
+                "nome": "Deividi Alves",
+                "email": "deividi@deividialves.com"
+            }
+        ],
+        "server": "mitrix.com.br",
+        "port": "465",
+        "user": "pj@mitrix.com.br",
+        "password": "Mitrix#2016"
+    },
     "granel": {
         "04.01.01": {
             "type": "est",
