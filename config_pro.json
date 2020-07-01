@@ -34,11 +34,15 @@
             {
                 "nome": "Deividi Alves",
                 "email": "deividi@deividialves.com"
+            },
+            {
+                "nome": "Raquel",
+                "email": "contato@supermercadotita.com.br"
             }
         ],
-        "server": "mitrix.com.br",
+        "host": "mitrix.com.br",
         "port": "465",
-        "user": "pj@mitrix.com.br",
+        "user": "suporte@mitrix.com.br",
         "password": "Mitrix#2016"
     },
     "granel": {

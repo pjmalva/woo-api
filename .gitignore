@@ -1,5 +1,6 @@
-.env
-/.vscode
-__pycache__
+__pycache__/*
+.env/*
+.vscode/*
 config.json
+config_pro.json
 config_test.json

@@ -141,7 +141,6 @@ class WooMi:
                 )
 
                 send = productOBJ.makeRequest()
-                print(send)
                 if not productStored:
                     response = productOBJ.create(send)
                 else:
