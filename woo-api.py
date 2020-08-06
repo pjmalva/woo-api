@@ -17,6 +17,10 @@ parser.add_argument('--update',
                     action='store_true',
                     help='Update all products')
 
+parser.add_argument('--categories',
+                    action='store_true',
+                    help='Update all Categories')
+
 parser.add_argument('--update-image',
                     action='store_true',
                     help='Update all products images')
@@ -57,6 +61,10 @@ if args.list_all_cat or args.list_all:
     print('LIST ALL CATEGORIES')
     migrate.listCategories()
 
+if args.categories:
+    print('MIGRATE CATEGORIES')
+    migrate.updateCategories()
+
 if args.update:
     print('UPDATE PRODUCTS')
     migrate.updateProducts()
@@ -65,7 +73,7 @@ if args.pictures:
     print('MIGRATE IMAGES')
     migrate.updateImages()
 
-migrate.sendEmail(config.get('email'))
+# migrate.sendEmail(config.get('email'))
 # if args.category:
 #    print('UPDATE PRODUCTS CATEGORES')
 #    migrate.updateCategories()

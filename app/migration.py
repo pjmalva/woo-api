@@ -6,6 +6,7 @@ from app.woo.category import Category
 # from app.image.google_scrap import GoogleScrap
 from app.controller.categories import CategoryController
 from app.controller.products import ProductController
+from app.controller.categories_tree import CategoriesTree
 from app.email.email import Email
 import time
 
@@ -198,9 +199,55 @@ class WooMi:
 
     def updateCategories(self):
         api = self.setupAPI()
-        productController = ProductController(self.type, self.db)
-        productsStored = productController.processProductsStored()
-        self.email += "Update data: Categories: OK\n"
+        categories = Category(api)
+
+        categoryController = CategoryController(self.type, self.db)
+        categories = categoryController.loadCategories()
+        tree = CategoriesTree(categories).mountTree()
+        finalTree = {}
+
+        for item in tree:
+            treeItem = tree.get(item)
+            if treeItem['display'] == 'default':
+                categoryAPI = Category(api, **treeItem)
+                category = categoryAPI.makeRequest()
+                categoryResponse = categoryAPI.create(category)
+
+                if categoryResponse.status_code > 300: continue
+                categoryResponse = categoryResponse.json()
+                treeItem['woo_id'] = categoryResponse['id']
+                print("[DONE] Category - " + categoryResponse['name'])
+
+                for subcategoryTreeItem in treeItem['items']:
+                    subcategoryItem = treeItem['items'].get(subcategoryTreeItem)
+                    subcategoryItem['parent'] = categoryResponse['id']
+                    subcategoryAPI = Category(api, **subcategoryItem)
+                    subcategory = subcategoryAPI.makeRequest()
+
+                    subcategoryResponse = categoryAPI.create(subcategory)
+                    if subcategoryResponse.status_code > 300: continue
+
+                    subcategoryResponse = subcategoryResponse.json()
+                    subcategoryItem['woo_id'] = subcategoryResponse['id']
+                    print("[DONE] Subcategory - " + subcategoryResponse['name'])
+
+                    for productItem in subcategoryItem['items']:
+                        productItem = subcategoryItem['items'].get(productItem)
+                        productItem['parent'] = subcategoryResponse['id']
+                        productAPI = Category(api, **productItem)
+                        product = productAPI.makeRequest()
+
+                        productResponse = categoryAPI.create(product)
+                        if productResponse.status_code > 300: continue
+
+                        productResponse = productResponse.json()
+                        productItem['woo_id'] = productResponse['id']
+                        print("[DONE] Product - " + productResponse['name'])
+            finalTree[treeItem['code']] = treeItem
+
+        with open('DATA/CATEGORY.json', 'w') as fp:
+            json.dump(finalTree, fp)
+        self.email += "Update data: Categories tree: OK\n"
 
     def sendEmail(self, email):
         mail = Email(

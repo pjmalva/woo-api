@@ -4,6 +4,7 @@ import json
 from app.woo.api import BaseAPI
 from app.controller.granel import Granel
 from datetime import datetime, timedelta
+from app.controller.categories_tree import CategoriesTree
 
 class Product(BaseAPI):
     def __init__(self, api, **kwargs):
@@ -11,6 +12,10 @@ class Product(BaseAPI):
         self.data = {}
         self.category = {}
         self.minimun_stock = kwargs.get('minimun_stock', 5)
+
+        f = open('DATA/CATEGORY.json', 'r')
+        self.category_tree = CategoriesTree(None, json.load(f))
+        # f.close()
 
         self.setName(kwargs.get('name'))
         self.setSku(kwargs.get('sku'))
@@ -174,17 +179,15 @@ class Product(BaseAPI):
         self.default_attributes = value
 
     def setCategoryCode(self, value):
-        self.category['code'] = value
+        self.category_code = value
 
     def setCategoryName(self, value):
-        self.category['name'] = value
+        self.category_name = value
 
-    def searchCategory(self):
-        with open('DATA/CATEGORY.json', 'r') as f:
-            categories = json.load(f)
-            for item in categories:
-                if item['name'] == self.category['name']:
-                    return { "id": item['id'] }
+    def getCategory(self, category):
+        category = self.category_tree.search(category)
+        if category: return [ { 'id': category['woo_id'] } ]
+        return []
 
     def makeRequest(self):
         if self.name:
@@ -244,11 +247,8 @@ class Product(BaseAPI):
         if self.stock_status:
             self.data["stock_status"] = self.stock_status
 
-        if self.categories:
-            self.data["categories"] = self.categories
-        else:
-            category = self.searchCategory()
-            if category: self.data["categories"] = [ category ]
+        if self.category_code:
+            self.data["categories"] = self.getCategory(self.category_code)
 
         if self.tags:
             self.data["tags"] = self.tags
@@ -262,7 +262,7 @@ class Product(BaseAPI):
         if self.default_attributes:
             self.data["default_attributes"] = self.default_attributes
 
-        return Granel().checkAndConvert(self.category['code'], self.data)
+        return Granel().checkAndConvert(self.category_code, self.data)
 
     def outOfStock(self):
         return self.stock_status == "outofstock"

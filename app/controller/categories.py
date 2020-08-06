@@ -31,12 +31,12 @@ class CategoryController:
         return self.categories
 
     def formatCategories(self, categories):
-        categoryiesFormated = []
+        categoriesFormated = []
         for category in categories:
-            categoryiesFormated.append(
+            categoriesFormated.append(
                 self.getCategoryFields(category)
             )
-        return categoryiesFormated
+        return categoriesFormated
 
     def getCategoryFields(self, data):
         if self.type == 'csv':
@@ -55,4 +55,3 @@ class CategoryController:
             "code": category['stock'].strip(),
             "name": category['name'].strip()
         }
-

@@ -1,0 +1,536 @@
+﻿CATEGORY_CODE;CATEGORY_NAME
+01      ;BEBIDAS                                                                                             
+01.01   ;BEBIDA ALCOLICA                                                                                     
+01.01.01;AGUARDENTE/CACHACA                                                                                  
+01.01.02;BATIDA/COQUETEL ALCOOLICO/RAIZES                                                                    
+01.01.03;TEQUILA                                                                                             
+01.01.04;CONHAQUE                                                                                            
+01.01.05;ESPUMAN/SIDRA/FRISANTE/CHAMPAG                                                                      
+01.01.06;CAMPARI/VERMUTE/GIN/CORTEZANO                                                                       
+01.01.07;LICOR                                                                                               
+01.01.08;VODKA                                                                                               
+01.01.09;WHISKY                                                                                              
+01.01.10;VINHO                                                                                               
+01.01.11;ICE                                                                                                 
+01.01.12;COOLER TIPO VINHO                                                                                   
+01.01.13;RUN BACARDI                                                                                         
+01.01.14;CERVEJA LATA                                                                                        
+01.01.15;CERVEJA GARRAFA/LONG NECK                                                                           
+01.01.16;CERVEJA RETORNAVEL                                                                                  
+01.01.17;CERVEJA SEM ALCOOL                                                                                  
+01.02   ;BEBIDAS NÃO ALCOLICAS                                                                               
+01.02.01;AGUA MINERAL                                                                                        
+01.02.03;AGUA TONICA                                                                                         
+01.02.04;ENERGETICO                                                                                          
+01.02.05;ISOTONICO/HIDROTONICO                                                                               
+01.02.06;GROSELHA                                                                                            
+01.02.07;SUCO PRONTO                                                                                         
+01.02.08;SUCO (PARA PREPARAR)                                                                                
+01.02.09;REFRESCO EM PO                                                                                      
+01.02.10;AGUA DE COCO                                                                                        
+01.03   ;REFRIGERANTES                                                                                       
+01.03.01;REFRIGERANTE LATA                                                                                   
+01.03.02;REFRIGERANTE PET ATE 600ML                                                                          
+01.03.03;REFRIGERANTE PET ACIMA 600ML                                                                        
+01.03.04;REFRIGERANTE RETORNAVEL                                                                             
+02      ;LATICINIOS                                                                                          
+02.01   ;LATICINIOS DIVERSOS                                                                                 
+02.01.01;MARGARINA/CREME VEGETAL                                                                             
+02.01.02;MANTEIGA                                                                                            
+02.01.03;REQUEIJAO/CREME DE RICOTA/QUEIJO CREMOSO                                                            
+02.01.04;IOGURTE/BEBIDA LACTEA/LEITE FERMENTADO/SOBREMESA LACTEA                                             
+02.01.05;CREME DE LEITE FRESCO                                                                               
+02.01.06;QUEIJO COLONIAL E RICOTA COLONIAL                                                                   
+02.01.07;QUEIJO MUSSARELA                                                                                    
+02.01.08;QUEIJO PARMESAO                                                                                     
+02.01.09;QUEIJO PROV/MINAS/PRATO/REINO/CHEDAR/COALHO/GOUDA/QUEIJINHOS                                        
+02.01.10;LEITE FIORE                                                                                         
+02.02   ;MASSAS FRIAS E OUTROS                                                                               
+02.02.01;FERMENTO FRESCO                                                                                     
+02.02.02;GORDURA VEGETAL                                                                                     
+02.02.03;OVO CODORNA EM CONSERVA                                                                             
+02.02.04;PAO DE ALHO                                                                                         
+02.02.05;SALSICHA VINAGRETE                                                                                  
+02.02.06;MASSA PASTEL/LASANHA/PIZZA FRIA                                                                     
+03      ;MASSAS SECAS/MOLHOS/ENLATADOS                                                                       
+03.01   ;MASSAS SECAS                                                                                        
+03.01.01;MACARRAO OUTROS                                                                                     
+03.01.02;MACARRAO INSTANTANEO                                                                                
+03.01.03;SOPA/SOPAO/CREME/PASTA                                                                              
+03.01.04;MASSA LASANHA SECA                                                                                  
+03.01.05;MASSA ARROZ                                                                                         
+03.01.06;MACARRAO VILLONI                                                                                    
+03.01.07;MACARRAO PIRAQUE/ALDENTE                                                                            
+03.01.08;MACARRAO RENATA/GALO                                                                                
+03.01.09;MACARRAO VILMA/YARA                                                                                 
+03.02   ;MOLHOS E TEMPEROS                                                                                   
+03.02.01;MOLHO/POLPA/EXTRATO DE TOMATE                                                                       
+03.02.02;MOLHO SALADA E LIMAO ESPREMIDO                                                                      
+03.02.03;MOLHO INGLES/PIMENTA/ALHO/MADEIRA E OUTROS                                                          
+03.02.04;VINAGRE                                                                                             
+03.02.05;CREME DE ALHO E ALHO FRITO                                                                          
+03.02.06;TEMPERO COMPLETO TIPO ARISCO/SAZON/KNORR                                                            
+03.02.07;QUEIJO RALADO                                                                                       
+03.02.08;CONDIMENTO                                                                                          
+03.02.09;SAL TEMPERADO/TEMPERO CHURRASCO/AJINOMOTO                                                           
+03.02.10;CATCHUP                                                                                             
+03.02.11;MAIONESE                                                                                            
+03.02.12;MOSTARDA                                                                                            
+03.02.13;FAROFA PRONTA                                                                                       
+03.02.14;BATATA PALHA/MANDIOQUINHA PALHA                                                                     
+03.02.15;MISTURA P/EMPANAR                                                                                   
+03.02.16;AMACIANTE DE CARNE                                                                                  
+03.02.17;BATATA PELLETS/PURURUCA                                                                             
+03.03   ;ENLATADOS/CONSERVA                                                                                  
+03.03.01;SELETA/DUETO/LEGUMES E VEGETAIS ENLATADOS                                                           
+03.03.02;ERVILHA EM CONSERVA                                                                                 
+03.03.03;MILHO VERDE ENLATADO                                                                                
+03.03.04;AZEITONA (EM CONSERVA)                                                                              
+03.03.05;PALMITO (EM CONSERVA)                                                                               
+03.03.06;CHAMPIGNON/COGUMELO (EM CONSERVA)                                                                   
+03.03.07;TOMATE SECO (EM CONSERVA)                                                                           
+03.03.08;PIMENTA (EM CONSERVA)                                                                               
+03.03.09;ATUM/SALMAO (ENLATADO)                                                                              
+03.03.10;SARDINHA/CAVALINHA (ENLATADA)                                                                       
+03.03.11;ALMONDEGA (ENLATADA)                                                                                
+03.03.12;FEIJOADA/FEIJAO (ENLATADO)                                                                          
+03.03.13;SALSICHA/LINGUICA (ENLATADA)                                                                        
+03.03.14;PATE SACHE E ENLATADO                                                                               
+03.04   ;OLEOS ESPECIAIS                                                                                     
+03.04.01;OLEO MILHO                                                                                          
+03.04.02;OLEO CANOLA                                                                                         
+03.04.03;OLEO GIRASSOL                                                                                       
+03.04.04;OLEO DE COCO (COZINHA)                                                                              
+03.04.05;OLEO COMPOSTO TIPO AZEITE                                                                           
+03.04.06;AZEITE DE OLIVA                                                                                     
+03.04.07;AZEITE DE DENDE                                                                                     
+04      ;ACOUGUE                                                                                             
+04.01   ;CARNE BOVINA                                                                                        
+04.01.01;CARNE BOVINA FRESCA                                                                                 
+04.01.02;CARNE BOVINA CONGELADA                                                                              
+04.01.04;CHARQUE                                                                                             
+04.02   ;CARNE SUINA                                                                                         
+04.02.01;CARNE SUINA RESFRIADA                                                                               
+04.02.02;CARNE SUINA CONGELADA                                                                               
+04.02.03;CARNE SUINA SALGADA                                                                                 
+04.02.06;TORRESMO                                                                                            
+04.03   ;AVES DIVERSAS                                                                                       
+04.03.01;FRANGO E CORTES                                                                                     
+04.03.02;PERU E CORTES                                                                                       
+04.03.03;OUTRAS AVES                                                                                         
+04.04   ;FRUTOS DO MAR                                                                                       
+04.04.01;PEIXE SALGADO                                                                                       
+04.04.02;PEIXE CONGELADO                                                                                     
+04.04.04;CAMARAO                                                                                             
+04.05   ;EMBUTIDOS RESFRIADOS                                                                                
+04.05.01;BACON                                                                                               
+04.05.02;LINGUICA/PAIO/SALSICHAO RESFRIADOS                                                                  
+04.05.03;SALAME                                                                                              
+04.05.04;PRESUNTO/APRESUNTADO                                                                                
+04.05.05;MORTADELA                                                                                           
+04.06   ;EMBUTIDOS E OUTROS CONGELADOS                                                                       
+04.06.01;BATATA/AIPIM/VEGETAIS/POLENTA/QUIBE/BOLINHO/ALMONDEGA                                               
+04.06.02;LASANHA/ESCONDIDINHO/CAPELETE CONGELADO                                                             
+04.06.03;EMPANADO FRANGO                                                                                     
+04.06.04;PIZZA CONGELADA                                                                                     
+04.06.05;BIFE DE HAMBURGUER                                                                                  
+04.06.06;SANDUICHE PRONTO                                                                                    
+04.06.07;PAO DE QUEIJO (CONGELADO)                                                                           
+04.06.08;SALSICHA CONGELADA                                                                                  
+04.06.09;POLPA FRUTA                                                                                         
+04.06.10;LINGUICA CONGELADA                                                                                  
+05      ;PADARIA E CONFEITARIA TITA                                                                          
+05.01   ;PRODUCAO PROPRIA                                                                                    
+05.01.01;PRODUCAO PROPRIA PADARIA                                                                            
+05.01.02;PAO FRANCES                                                                                         
+06      ;HORTIFRUTI                                                                                          
+06.01   ;FRUTAS/LEGUMES/VERDURAS                                                                             
+06.01.01;ALHO                                                                                                
+06.01.02;VERDURAS E LEGUMES                                                                                  
+06.01.03;FRUTAS IN NATURA                                                                                    
+06.01.04;OVOS GALINHA E CODORNA                                                                              
+07      ;PADARIA EXTERNA                                                                                     
+07.01   ;PRODUTOS DIVERSOS PADARIA EXTER                                                                     
+07.01.01;PAO DOCE/SAL/FORMA EXTERNO                                                                          
+07.01.02;PANETONE EXTERNO                                                                                    
+07.01.03;ROSCA/BOLACHA TIPO CASEIRA EXTER                                                                    
+07.01.04;BISCOITO CASEIRO EXTERNO                                                                            
+07.01.05;BISCOITO POLVILHO EXTERNO                                                                           
+07.01.06;BOLO/BOLINHO EXTERNO                                                                                
+07.01.07;FARINHA ROSCA EXTERNA                                                                               
+07.01.08;SUSPIRO                                                                                             
+08      ;CEREAIS E FARINACEOS                                                                                
+08.01   ;CEREAIS PESADOS                                                                                     
+08.01.01;ARROZ                                                                                               
+08.01.02;ACUCAR CRISTAL                                                                                      
+08.01.03;ACUCAR REFINADO                                                                                     
+08.01.04;FEIJAO                                                                                              
+08.01.05;FARINHA DE TRIGO                                                                                    
+08.01.06;OLEO DE SOJA                                                                                        
+08.01.07;FARINHA DE MANDIOCA                                                                                 
+08.01.09;FUBA                                                                                                
+08.01.10;SAL REFINADO                                                                                        
+08.02   ;FARINACEOS                                                                                          
+08.02.01;MISTURA PARA BOLO                                                                                   
+08.02.02;AMIDO DE MILHO (MAISENA)                                                                            
+08.02.03;FERMENTO SECO                                                                                       
+08.02.04;COALHO                                                                                              
+08.02.05;POLVILHO AZEDO/DOCE                                                                                 
+08.02.06;SOJA GRAO/GRAO DE BICO/LENTILHA                                                                     
+08.02.07;CANJIQUINHA AMARELA                                                                                 
+08.02.08;TRIGO P/KIBE                                                                                        
+08.02.09;TAPIOCA (CUSCUZ)                                                                                    
+08.02.10;MILHO PIPOCA                                                                                        
+08.02.11;MILHO CANJICA BRANCA                                                                                
+08.02.12;FARINHA DE MILHO (MILHARINA)                                                                        
+08.02.13;PIPOCA MICROONDAS                                                                                   
+08.02.14;AMENDOIM                                                                                            
+08.02.15;MISTURA PAO DE QUEIJO/PANQUECA                                                                      
+09      ;MATERIAL ESCOLAR                                                                                    
+09.01   ;MATERIAL ESCOLAR                                                                                    
+09.01.01;CADERNO (DIVERSOS)                                                                                  
+09.01.02;CANETA ESFEROGRAFICA                                                                                
+09.01.03;CANETINHA HIDROCOR                                                                                  
+09.01.04;LAPIS PRETO (ESCOLAR)                                                                               
+09.01.05;LAPIS DE COR                                                                                        
+09.01.06;GIZ DE CERA/GIZAO/APAGADOR                                                                          
+09.01.07;LAPISEIRA ESCOLAR                                                                                   
+09.01.08;BORRACHA ESCOLAR                                                                                    
+09.01.09;CORRETIVO ESCOLAR                                                                                   
+09.01.10;COLA BRANCA/BASTAO                                                                                  
+09.01.11;GRAFITE ESCOLAR                                                                                     
+09.01.12;APONTADOR ESCOLAR                                                                                   
+09.01.13;COMPASSO                                                                                            
+09.01.14;REGUA ESCOLAR/ESQUADRO                                                                              
+09.01.15;PINCEL ATOMICO/RETRO PROJETOR/TINTA PILOT                                                           
+09.01.16;PASTA ESCOLAR/MALETA ESCOLAR                                                                        
+09.01.17;PAPEL CHAMEX/ALMACO/CONTACT/FAX                                                                     
+09.01.18;MASSA P/ MODELAR                                                                                    
+09.01.19;ESTOJO ESCOLAR                                                                                      
+09.01.20;GRAMPEADOR/GRAMPO/PERFURAADOR                                                                       
+09.01.21;MOCHILA ESCOLAR/BOLSA VIAGEM                                                                        
+09.01.22;TINTA GUACHE/TINTA TECIDO                                                                           
+09.01.23;CADERNETA/BLOCO NOTAS/TABUADA                                                                       
+09.01.24;FICHARIO/DIVISORIA/FOLHA FICH                                                                       
+09.01.25;COLA COLORIDA/COLA GLITER                                                                           
+09.01.26;TESOURA/ESTILETE ESCOLAR                                                                            
+09.01.27;CALCULADORA                                                                                         
+09.01.28;FITA ADESIVA/FITA CREPE/DUREX                                                                       
+10      ;LIMPEZA GERAL                                                                                       
+10.01   ;SECAO SABOES                                                                                        
+10.01.01;DESINFETANTES/ESSENCIAS                                                                             
+10.01.02;PURIFICADORES AMBIENTE                                                                              
+10.01.03;AMACIANTE DE ROUPA                                                                                  
+10.01.04;TINTOL                                                                                              
+10.01.05;TIRA FERRUGEM                                                                                       
+10.01.06;ANTI MOFO                                                                                           
+10.01.07;TIRA MANCHAS                                                                                        
+10.01.08;ALVEJANTES                                                                                          
+10.01.09;ANIL                                                                                                
+10.01.10;SABAO EM PO                                                                                         
+10.01.11;SABAO LIQUIDO                                                                                       
+10.01.12;SABAO EM PEDRA                                                                                      
+10.01.13;SABAO EM PASTA                                                                                      
+10.01.14;SODA CAUSTICA                                                                                       
+10.01.15;VELA                                                                                                
+10.01.16;FACILITADOR PASSAR ROUPA                                                                            
+10.01.17;PEDRA E PURIFICADORES SANITARIOS                                                                    
+10.01.18;LAVA ROUPAS PO SANITIZANTE TRIBUTADO                                                                
+10.02   ;SECAO AGUA SANITARIA                                                                                
+10.02.01;CLORO                                                                                               
+10.02.02;AGUA SANITARIA                                                                                      
+10.02.03;ALCOOL                                                                                              
+10.02.04;DETERGENTE LOUCAS                                                                                   
+10.02.05;QUEROSENE                                                                                           
+10.02.06;LIMPA PEDRA/AZULEJO/REJUNTE                                                                         
+10.02.07;LIMPA ALUMINIO/FORNO/SILVO/BRASSO                                                                   
+10.02.08;SAPONACEO                                                                                           
+10.02.09;LIMPADOR PERFUMADO/MULTIUSO/VIDRO/PESADO/DESENGORDURANTE                                            
+10.02.10;LUSTRA MOVEIS/OLEO PEROBA                                                                           
+10.02.11;CERA P/CHAO PASTA/LIQUIDA                                                                           
+10.03   ;SECAO VASSOURAS                                                                                     
+10.03.01;INSETICIDA LIQUIDA/AERO/PASTILHA/ELETRICA                                                           
+10.03.02;REPELENTE                                                                                           
+10.03.03;NEOCID/SENTINELA                                                                                    
+10.03.04;VASSOURA                                                                                            
+10.03.05;RODO                                                                                                
+10.03.06;PA LIXO                                                                                             
+10.03.07;ESCOVA/VASSOURA SANITARIA                                                                           
+10.03.08;ESPANADOR                                                                                           
+10.03.09;CORDA VARAL                                                                                         
+10.03.10;LUVAS                                                                                               
+10.03.11;NAFTALINA                                                                                           
+10.03.12;ESPONJA LIMPEZA/BANHO                                                                               
+10.03.13;ESCOVA ROUPA/UNHA/SAPATO                                                                            
+10.03.14;PRENDEDOR ROUPA                                                                                     
+10.03.15;SACO LIXO                                                                                           
+10.03.16;ESTOPA                                                                                              
+10.03.17;PANO MULTIUSO TIPO PERFEX                                                                           
+10.03.18;SACO CHAO/PANO PRATO/FLANELA                                                                        
+10.03.19;PALHA ACO                                                                                           
+10.03.20;ESPONJA DE ACO                                                                                      
+10.03.21;AVENTAL/CORTINA                                                                                     
+10.03.22;DESENTUPIDOR BORRACHA                                                                               
+10.03.23;FOSFORO/ACENDEDORES                                                                                 
+10.03.24;FOGUETE                                                                                             
+10.03.25;LAMPADA LED                                                                                         
+10.03.26;LAMPADA FLUORESCENTE/COMUM                                                                          
+10.03.27;UTILIDALLA                                                                                          
+10.03.28;CHUVEIRO/RESISTENCIA                                                                                
+10.03.29;VELA FILTRO                                                                                         
+10.03.30;LANTERNA                                                                                            
+10.03.31;SILICONE/LUBRIFICANTE/OLEO MAQUINA                                                                  
+10.03.32;PRODUTOS AUTOMOTIVOS                                                                                
+10.03.33;REGULADOR DE GAS                                                                                    
+10.04   ;SECAO PAPEL HIGIENICO                                                                               
+10.04.01;PAPEL HIGIENICO                                                                                     
+10.04.02;TOALHA PAPEL                                                                                        
+10.04.03;COPO DESCARTAVEL                                                                                    
+10.04.04;PRATO/BANDEJA DESCARTAVEL                                                                           
+10.04.05;LIDER FESTAS                                                                                        
+10.04.06;GUARDANAPO                                                                                          
+10.04.07;PAPEL ALUMINIO/FORRA FOGAO/                                                                         
+10.04.08;FILME PVC                                                                                           
+10.04.09;MARMITEX/FILTRO AR                                                                                  
+10.05.10;SACOLA ROLO VENDA                                                                                   
+10.05.11;ESPETINHO MADEIRA / BAMBU                                                                           
+11      ;PET SHOP                                                                                            
+11.01   ;PET SHOP DIVERSOS                                                                                   
+11.01.01;HIGIENE ANIMAL                                                                                      
+11.01.02;ACESSORIOS P/ ANIMAIS                                                                               
+11.01.03;ALIMENTOS P/CAES E GATOS                                                                            
+11.01.04;ALIMENTOS P/ AVES                                                                                   
+12      ;PERFUMARIA                                                                                          
+12.01   ;PRODUTOS P/CABELO                                                                                   
+12.01.01;SHAMPOO                                                                                             
+12.01.02;CONDICIONADOR                                                                                       
+12.01.03;KIT SHAMPOO/CONDICIONADOR                                                                           
+12.01.04;CREME CABELO/PENTEAR/MASSAGEM                                                                       
+12.01.05;DEFRIZANTE/OLEO CAPILAR/AMPOLA/TONICO/REP PONTAS/ALISANTE E OUTROS                                  
+12.01.06;MOUSSE/SPRAY/FIXADOR CAPILAR                                                                        
+12.01.07;GEL CAPILAR                                                                                         
+12.01.08;TINTURA/TONALIZANTE/COLORACAO                                                                       
+12.02   ;ACESSORIOS CABELO/CORPO/OUTRO                                                                       
+12.02.01;ESCOVA CABELO                                                                                       
+12.02.02;GRAMPO P/CABELO                                                                                     
+12.02.03;BOBES P/CABELO                                                                                      
+12.02.04;TOUCA CABELO/TIGELA PARA TINTURA                                                                    
+12.02.05;PINCEL P/TINTURA DE CABELO                                                                          
+12.02.06;PRENDEDOR/BORRACHINHA CABELO                                                                        
+12.02.07;PINCEL P/BARBEAR                                                                                    
+12.02.08;PENTE CABELO                                                                                        
+12.02.09;ESPELHO                                                                                             
+12.03   ;HIGIENE BUCAL                                                                                       
+12.03.01;CREME DENTAL/GEL DENTAL                                                                             
+12.03.02;ENXAGUANTE BUCAL                                                                                    
+12.03.03;FIO DENTAL                                                                                          
+12.03.04;ESCOVA DENTAL                                                                                       
+12.03.05;ACESSORIOS P/ESCOVACAO                                                                              
+12.04   ;DESODORANTES                                                                                        
+12.04.01;DESODORANTE AEROSOL                                                                                 
+12.04.02;DESODORANTE CREME                                                                                   
+12.04.03;DESODORANTE GEL                                                                                     
+12.04.04;DESODORANTE ROLL-ON                                                                                 
+12.04.05;DESODORANTE SPRAY                                                                                   
+12.05   ;SABONETES                                                                                           
+12.05.01;SABONETE BARRA                                                                                      
+12.05.02;SABONETE LIQUIDO/INTIMO                                                                             
+12.06   ;PRODUTOS P/ROSTO/CORPO                                                                              
+12.06.01;CREME HIDRATANTE CORPORAL                                                                           
+12.06.02;LOCAO DE LIMPEZA CORPORAL                                                                           
+12.06.03;ESPUMA/CREME DE BARBEAR                                                                             
+12.06.04;LENCO UMEDECIDO                                                                                     
+12.06.05;LOCAO/GEL POS BARBA                                                                                 
+12.06.06;OLEO CORPORAL                                                                                       
+12.06.07;COLONIA/LAVANDA                                                                                     
+12.06.08;POLVILHO ANTISEPTICO                                                                                
+12.06.09;TALCO                                                                                               
+12.07   ;MANICURE/PEDICURE/DEPILACAO                                                                         
+12.07.01;ESMALTE/AMOLECEDOR NCM 3304                                                                         
+12.07.02;ALICATE DE CUTICULA                                                                                 
+12.07.03;CORTADOR/TESOURINHA DE UNHA                                                                         
+12.07.04;LIXA UNHA/LIXA PE/P POME/RALO                                                                       
+12.07.05;PALITO/ESPATULA P/CUTICULA                                                                          
+12.07.06;PINCA                                                                                               
+12.07.07;CERA/CREME/ FOLHA DEPILACAO                                                                         
+12.08   ;OUTROS PRODUTOS DE PERFUMARIA                                                                       
+12.08.01;ABSORVENTE/PROTETOR DIARIO                                                                          
+12.08.02;ABSORVENTE P/SEIOS                                                                                  
+12.08.03;ALGODAO                                                                                             
+12.08.04;COTONETE (HASTES)                                                                                   
+12.08.05;AGUA OXIGENADA                                                                                      
+12.08.06;BLONDOR/PO DESCOLORANTE                                                                             
+12.08.07;LOCAO/OLEO BRONZEADOR SOLAR                                                                         
+12.08.08;PROTETOR/BLOQUEADOR SOLAR                                                                           
+12.08.09;ACETONA                                                                                             
+12.08.10;AMONIA                                                                                              
+12.08.11;OLEO BANANA                                                                                         
+12.08.12;MAQUIAGEM                                                                                           
+12.09   ;INFANTIL E OUTROS                                                                                   
+12.09.01;CREME P/ASSADURA                                                                                    
+12.09.02;MAMADEIRA/PROTETOR TERMICO                                                                          
+12.09.03;BICO PARA MAMADEIRA                                                                                 
+12.09.04;ESCOVA P/LIMPEZA MAMADEIRA                                                                          
+12.09.05;CHUPETA                                                                                             
+12.09.06;PRENDEDOR P/CHUPETA                                                                                 
+12.09.07;FRALDA GERIATRICA                                                                                   
+12.09.08;FITA ADESIVA P/FRALDA                                                                               
+12.09.09;ALFINETE P/FRALDA                                                                                   
+12.09.10;MORDEDOR INFANTIL                                                                                   
+12.09.11;FRALDA DESCARTAVEL INFANTIL                                                                         
+12.09.12;CURATIVO/BANDAID                                                                                    
+12.09.13;SANDALIA/CHINELO                                                                                    
+12.09.14;GRAXA SAPATO                                                                                        
+13      ;BISCOITO                                                                                            
+13.01   ;BISCOITOS DIVERSOS                                                                                  
+13.01.01;BISCOITO SAL                                                                                        
+13.01.02;BISCOITO RECHEADO                                                                                   
+13.01.03;BISCOITO SAL TIPO CLUB SOCIAL                                                                       
+13.01.04;BISCOITO DOCE                                                                                       
+13.01.05;BISCOITO WAFER                                                                                      
+13.01.06;BISCOITO SALGADINHO PETISCO                                                                         
+13.01.07;BISCOITO COOKIES/TORTINHA                                                                           
+13.01.08;BISCOITO AMANTEIGADO                                                                                
+13.01.09;BISCOITO POLVILHO                                                                                   
+13.01.10;BISCOITO SEQUILHOS                                                                                  
+13.01.11;BISCOITO CHAMPAGNE                                                                                  
+13.01.12;ELMA CHIPS                                                                                          
+13.01.13;YOKI CHIPS                                                                                          
+13.01.14;ROCAMBOLE/PAO DE MEL/ROLINHO                                                                        
+13.01.15;ROSQUINHA DOCE INDUSTRIALIZADA                                                                      
+13.01.16;TORRADA (INDUSTRIALIZADA)                                                                           
+13.01.17;OUTROS CHIPS                                                                                        
+14      ;DOCES                                                                                               
+14.01   ;CHOCOLATES E BALAS                                                                                  
+14.01.01;BOMBOM                                                                                              
+14.01.02;BIS E OUTROS                                                                                        
+14.01.03;PIRULITO                                                                                            
+14.01.04;BALA COMUM/CARAMELO                                                                                 
+14.01.05;CHOCOLATE TABLETE                                                                                   
+14.01.06;AMENDOIM PETISCO                                                                                    
+14.01.07;PACOCA/PE DE MOLEQUE                                                                                
+14.01.08;OUTROS CHOCOLATES                                                                                   
+14.01.09;PASTILHA DOCE                                                                                       
+14.01.10;DROPS                                                                                               
+14.01.11;GOMA/MARSHMALLOW                                                                                    
+14.01.12;BALA GELATINA (FINI)                                                                                
+14.01.13;COLOMBA PASCOA                                                                                      
+14.02   ;DOCES DE FRUTAS                                                                                     
+14.02.01;MARIOLA/BANANADA                                                                                    
+14.02.02;GOIABADA/MARMELADA/MARRON GLACE                                                                     
+14.02.03;GELEIA FRUTA                                                                                        
+14.02.04;DOCE/FRUTA EM CALDA                                                                                 
+14.02.05;OUTROS DOCES EM POTE/TABLETE                                                                        
+14.02.06;FRUTAS SECAS/CRISTALIZADAS                                                                          
+14.03   ;INGREDIENTES PARA BOLO/DOCES                                                                        
+14.03.01;CHOCOLATE GRANULADO                                                                                 
+14.03.02;EMULSIFICANTE E ESTABILIZANTE (P/SORVETE)                                                           
+14.03.03;PO P/SORVETE                                                                                        
+14.03.04;COBERTURA P/SORVETE                                                                                 
+14.03.05;LEITE CONDENSADO                                                                                    
+14.03.06;CREME DE LEITE                                                                                      
+14.03.07;COCO RALADO                                                                                         
+14.03.08;LEITE DE COCO                                                                                       
+14.03.09;MOCA FESTA                                                                                          
+14.03.10;ANELINA/CORANTE PARA BOLO                                                                           
+14.03.11;DOCE LEITE                                                                                          
+14.03.12;GELATINA                                                                                            
+14.03.13;CHANTILLY CREME/PO/SPRAY                                                                            
+14.04.14;GELATINA SEM SABOR                                                                                  
+14.04.15;PO P/PUDIM/FLAN/MARIA MOLE E OUTROS                                                                 
+15      ;MATINAIS/ALIM INFANTIL/LEITE PO                                                                     
+15.01   ;MATINAIS DIVERSOS                                                                                   
+15.01.01;ACHOCOLATADO LIQUIDO/BEBIDA LACTEA SABORIZADA SECA                                                  
+15.01.02;ACHOCOLATADO PO                                                                                     
+15.01.03;FARINHA LACTEA/NESTON                                                                               
+15.01.04;NULO                                                                                                
+15.01.05;CHOCOLATE/CACAU EM PO                                                                               
+15.01.06;SUSTAGEM/SUSTARE                                                                                    
+15.01.07;BEBIDA SOJA LIQUIDA                                                                                 
+15.01.08;LEITE EM PO                                                                                         
+15.01.09;MINGAU MUCILON/NUTRIBOM E OUTROS                                                                    
+15.01.10;SOPINHA/PAPINHA INFANTIL                                                                            
+15.01.11;GELEIA MOCOTO                                                                                       
+15.01.12;CEREAL MATINAL TIPO SUCRILHOS                                                                       
+15.01.13;CAPUCCINO / CAFE C/LEITE                                                                            
+15.01.14;CAFE                                                                                                
+15.01.15;CEVADA/CHIMARRAO                                                                                    
+15.01.16;FILTRO/COADOR/PORTA FILTRO CAFÉ                                                                     
+15.01.17;LEITE UHT TP TRADICIONAL                                                                            
+15.01.18;LEITE UHT SEM LACTOSE                                                                               
+16      ;DIET/LIGHT/PRODUTOS NATURAIS                                                                        
+16.01   ;DIET/LIGHT/PRODUTOS NATURAIS                                                                        
+16.01.01;WAFER/BISCOITO RECHEADO DIET                                                                        
+16.01.02;MEL DE ABELHA                                                                                       
+16.01.03;ACHOCOLATADO PO DIET/LIGHT                                                                          
+16.01.04;SUCO PRONTO LIGHT                                                                                   
+16.01.05;CHA LIQUIDO                                                                                         
+16.01.06;REFRESCO EM PO DIET/LIGHT                                                                           
+16.01.07;DOCE/CREME/LEITE COND DIET/LIGHT                                                                    
+16.01.08;GELATINA DIET/PUDIM DIET/LIGHT                                                                      
+16.01.09;GELEIA DIET/LIGHT                                                                                   
+16.01.10;GOIABADA DIET/LIGHT                                                                                 
+16.01.11;CHOCOLATE DIET/LIGHT                                                                                
+16.01.12;BISCOITO/COOKIES INTEGRAL/DIET/LIGHT                                                                
+16.01.13;ADOCANTE                                                                                            
+16.01.14;CHA PO/SAQUINHO/FOLHA                                                                               
+16.01.15;LINHACA/QUINOA/SOJA/CHIA                                                                            
+16.01.16;GRANOLA                                                                                             
+16.01.17;SAL LIGHT/MARINHO/ROSA                                                                              
+16.01.18;ACUCAR MASCAVO/LIGHT/COCO/DEMERARA                                                                  
+16.01.19;SHAKE DIET                                                                                          
+16.01.20;PRODUTOS AVEIA                                                                                      
+16.01.21;FARINHA MARACUJA/COCO/BERINJELA/ARROZ                                                               
+16.01.22;FIBRA TRIGO/LEVEDO CERVEJA/GERGELIM                                                                 
+16.01.23;AVELAS/CASTANHAS/NOZES                                                                              
+16.01.24;CEREAL BARRA                                                                                        
+16.01.25;SEQUILHOS DIET/LIGHT                                                                                
+16.01.26;GLICERINA                                                                                           
+16.01.27;GUARANA EM PO                                                                                       
+16.01.28;MISTURA BOLO/PAO LIGHT/DIET                                                                         
+16.01.29;SOPA DIET/LIGHT                                                                                     
+16.01.30;CEREAL TIPO SUCRILHO DIET/LIGHT                                                                     
+16.01.31;ARROZ/ERVILHA/LENTILHA LIGHT NATURAL                                                                
+16.04.16;OVO DE PASCOA E COELHO                                                                              
+17      ;UTILIDADES DOMESTICAS                                                                               
+17.01   ;UTILIDADES DOMESTICAS                                                                               
+17.01.01;PLASTICOS                                                                                           
+17.01.02;VIDROS/LOUCAS                                                                                       
+17.01.03;ALUMINIO/ACO/INOX                                                                                   
+17.01.04;MADEIRA                                                                                             
+17.01.05;GARRAFA/GARRAFAO/MARMITA TERMICA                                                                    
+17.01.06;ELETRODOMESTICO                                                                                     
+17.01.07;ACESSORIO DE PANELA PRESSAO                                                                         
+17.01.08;CADEIRA/SOMBRINHA PRAIA E OUTROS                                                                    
+17.01.09;EMBALAGEM PAPEL                                                                                     
+17.01.10;CAIXA ISOPOR/TERMICA                                                                                
+17.01.11;FILTRO PARA AGUA                                                                                    
+17.01.12;CASCO AGUA MINERAL                                                                                  
+17.01.13;CARVAO                                                                                              
+17.01.14;ESPETO E GRELHA                                                                                     
+17.01.15;SUPORTE PARA AGUA                                                                                   
+18      ;SORVETES                                                                                            
+18.01   ;SORVETES                                                                                            
+18.01.01;SORVETE                                                                                             
+18.01.02;ACAI                                                                                                
+19      ;CHECK STAND                                                                                         
+19.01   ;CHECK STAND DIVERSOS                                                                                
+19.01.01;PILHA E BATERIA                                                                                     
+19.01.02;FUMO                                                                                                
+19.01.03;APARELHO P/BARBEAR                                                                                  
+19.01.04;GILETE                                                                                              
+19.01.05;ISQUEIRO                                                                                            
+19.01.06;CHICLETE                                                                                            
+19.01.07;NULO SSDD                                                                                           
+19.01.08;DUREPOXI/COLA SUPER BONDER                                                                          
+19.01.09;PRESERVATIVO E LUBRIFICANTE INTIMO                                                                  
+19.01.11;REFIL DE APARELHO DE BARBEAR                                                                        
+19.01.12;PALITO DE DENTE                                                                                     
+19.01.13;BARALHO                                                                                             
+20      ;CONSUMO E IMOBILIZADO                                                                               
+20.01   ;CONSUMO E IMOBILIZADO                                                                               
+21      ;CONVENIO                                                                                            
+21.01   ;CONVENIO                                                                                            
+21.01.01;CONVENIO                                                                                            
+98.98.98;LOJA VIRTUAL                                                                                        
+99.99.99;Importado do CISS                                                                                   

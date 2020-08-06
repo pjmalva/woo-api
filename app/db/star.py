@@ -1,11 +1,5 @@
 import pymssql
 
-# SELECT CE.ESTRUTURA 'CATEGORY_CODE',
-#     CE.DESCRICAO 'CATEGORY_NAME'
-# FROM CADEST CE
-# WHERE CE.ESTRUTURA NOT IN ('20.01.01')
-# ORDER BY CE.DESCRICAO
-
 class StarTwo:
     def __init__(self, host, user, passwd, database):
         self.conn = pymssql.connect(host, user, passwd, database)
@@ -19,9 +13,9 @@ class StarTwo:
         sql = """
             SELECT CE.ESTRUTURA 'CATEGORY_CODE',
                 CE.DESCRICAO 'CATEGORY_NAME'
-            FROM CADEST CE
+            FROM [STAR].[dbo].[CADEST] CE
             WHERE CE.ESTRUTURA NOT IN ('20.01.01')
-            ORDER BY CE.DESCRICAO
+            ORDER BY CE.ESTRUTURA
         """
 
         self.registros = []
