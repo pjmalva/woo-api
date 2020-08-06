@@ -52,6 +52,6 @@ class CategoryController:
 
     def getCategoryFieldsFromDB(self, category):
         return {
-            "code": category['category_code'].strip(),
-            "name": category['category_name'].strip()
+            "code": category['code'].strip(),
+            "name": category['name'].strip()
         }
