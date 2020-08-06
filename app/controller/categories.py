@@ -23,10 +23,10 @@ class CategoryController:
 
     def loadCategoriesFromDB(self):
         self.categories = StarTwo(
-            host=self.db.host,
-            user=self.db.user,
-            passwd=self.db.passwd,
-            database=self.db.database
+            host=self.db.get('host'),
+            user=self.db.get('user'),
+            passwd=self.db.get('passwd'),
+            database=self.db.get('database')
         ).updateCategories()
         return self.categories
 
